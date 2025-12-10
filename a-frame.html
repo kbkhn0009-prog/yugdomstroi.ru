@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>А-фрейм дома — Дом на юге</title>
+  <meta name="description" content="А-фрейм дома - компактные треугольные дома для отдыха. Быстрая сборка, современный дизайн, выгодная цена.">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Главная</a>
+        <a href="a-frame.html" class="active">А-фрейм</a>
+        <a href="barnhouse.html">Барнхаус</a>
+        <a href="modular.html">Модульные дома</a>
+        <a href="saunas-tubs.html">Бани и купели</a>
+        <a href="land.html">Оформление земли</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="btn-primary" onclick="openModal()">
+        <span class="btn-icon">💬</span> Задать вопрос ИИ
+      </button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero page-hero-aframe">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="hero-badge" data-aos="fade-down">🏔️ Популярный выбор</span>
+      <h1 data-aos="fade-up">А-фрейм дома</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Компактные, стильные, быстро окупаемые.<br>Идеальны для сдачи в аренду и отдыха.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro-block" data-aos="fade-up">
+        <h2>Что такое А-фрейм?</h2>
+        <p>А-фрейм (A-frame) — это дом треугольной формы с характерной двускатной крышей, которая доходит до земли. Такая конструкция обеспечивает отличную устойчивость к снеговым нагрузкам и ветру, при этом создаёт уникальный уютный интерьер с высокими потолками.</p>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Модели и цены</h2>
+      <div class="models-grid">
+        <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="model-badge">Хит продаж</div>
+          <div class="model-image">
+            <img src="img/aframe-1.jpg" alt="А-фрейм Лайт">
+          </div>
+          <h3>А-фрейм Лайт</h3>
+          <div class="model-specs">
+            <span>4×6 м</span>
+            <span>24 м²</span>
+          </div>
+          <p class="model-description">Компактный вариант для пары или небольшой семьи. Идеален для выходных.</p>
+          <div class="model-price">от 990 000 ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="model-badge">Рекомендуем</div>
+          <div class="model-image">
+            <img src="img/aframe-3.jpg" alt="А-фрейм Оптима">
+          </div>
+          <h3>А-фрейм Оптима</h3>
+          <div class="model-specs">
+            <span>6×6 м</span>
+            <span>45 м²</span>
+          </div>
+          <p class="model-description">Оптимальный баланс площади и цены. Подходит для семьи с детьми.</p>
+          <div class="model-price">от 1.2 млн ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="model-badge">Премиум</div>
+          <div class="model-image">
+            <img src="img/aframe-2.jpg" alt="А-фрейм Макси">
+          </div>
+          <h3>А-фрейм Макси</h3>
+          <div class="model-specs">
+            <span>6×9 м</span>
+            <span>70 м²</span>
+          </div>
+          <p class="model-description">Просторный дом с лофтом. Панорамное остекление, терраса.</p>
+          <div class="model-price">от 2.7 млн ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Что входит в стоимость</h2>
+      <div class="included-grid" data-aos="fade-up">
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Фундамент на винтовых сваях</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Каркас из клеёного бруса</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Утепление 200 мм</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Кровля металлочерепица</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Окна ПВХ двухкамерные</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Входная дверь</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Внутренняя отделка вагонкой</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Электропроводка</span>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Галерея</h2>
+      <div class="gallery" data-aos="fade-up">
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🏔️</span>
+            <p>Фото А-фрейм 1</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🏠</span>
+            <p>Фото А-фрейм 2</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🌲</span>
+            <p>Фото А-фрейм 3</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🏡</span>
+            <p>Интерьер</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Оставить заявку</h2>
+      <div class="form-wrapper" data-aos="fade-up">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Выберите модель</option>
+              <option value="light">А-фрейм Лайт (24 м²)</option>
+              <option value="optimal">А-фрейм Оптима (45 м²)</option>
+              <option value="maxi">А-фрейм Макси (70 м²)</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Дополнительные пожелания"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-lg">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
+          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Проекты</h4>
+          <a href="a-frame.html">А-фрейм</a>
+          <a href="barnhouse.html">Барнхаус</a>
+          <a href="modular.html">Модульные дома</a>
+          <a href="saunas-tubs.html">Бани и купели</a>
+        </div>
+        <div class="footer-links">
+          <h4>Услуги</h4>
+          <a href="land.html">Оформление земли</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p>📞 +7 (989) 232-11-77</p>
+          <p>📍 г. Сочи, ул. Горького, 87</p>
+          <p>✉️ info@domnayuge.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Modal -->
+  <div id="aiModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="ai-avatar">🤖</span>
+          <div>
+            <h3>ИИ-консультант</h3>
+            <span class="ai-status">Онлайн</span>
+          </div>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+          <span class="message-avatar">🤖</span>
+          <div class="message-content">
+            Здравствуйте! Я ИИ-консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-wrapper">
+        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
+        <button onclick="sendMessage()" class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <span class="cookie-icon">🍪</span>
+        <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Продолжая использовать сайт, вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+        <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
+

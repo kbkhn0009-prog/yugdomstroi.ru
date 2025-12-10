@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Барнхаус — Дом на юге</title>
+  <meta name="description" content="Барнхаус - просторные дома в скандинавском стиле. Современный дизайн, натуральные материалы, комфорт для всей семьи.">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Главная</a>
+        <a href="a-frame.html">А-фрейм</a>
+        <a href="barnhouse.html" class="active">Барнхаус</a>
+        <a href="modular.html">Модульные дома</a>
+        <a href="saunas-tubs.html">Бани и купели</a>
+        <a href="land.html">Оформление земли</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="btn-primary" onclick="openModal()">
+        <span class="btn-icon">💬</span> Задать вопрос ИИ
+      </button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero page-hero-barn">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="hero-badge" data-aos="fade-down">🏠 Скандинавский стиль</span>
+      <h1 data-aos="fade-up">Барнхаус</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Просторные дома для большой семьи.<br>Современный минимализм и уют.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro-block" data-aos="fade-up">
+        <h2>Что такое Барнхаус?</h2>
+        <p>Барнхаус (Barnhouse) — это современная интерпретация фермерского дома с характерной двускатной крышей и лаконичным дизайном. Большие окна, открытые пространства и натуральные материалы создают ощущение свободы и единения с природой. Идеально подходит для постоянного проживания семьи.</p>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Модели и цены</h2>
+      <div class="models-grid">
+        <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="model-badge">Компактный</div>
+          <div class="model-icon">🏠</div>
+          <h3>Барнхаус S</h3>
+          <div class="model-specs">
+            <span>6×8 м</span>
+            <span>60 м²</span>
+            <span>2 спальни</span>
+          </div>
+          <p class="model-description">Уютный дом для небольшой семьи. Просторная гостиная и две спальни.</p>
+          <div class="model-price">2.5 млн ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="model-badge">Популярный</div>
+          <div class="model-icon">🏡</div>
+          <h3>Барнхаус M</h3>
+          <div class="model-specs">
+            <span>8×10 м</span>
+            <span>90 м²</span>
+            <span>3 спальни</span>
+          </div>
+          <p class="model-description">Идеальный баланс пространства и функциональности для семьи с детьми.</p>
+          <div class="model-price">3.2 млн ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="model-badge">Премиум</div>
+          <div class="model-icon">🏰</div>
+          <h3>Барнхаус L</h3>
+          <div class="model-specs">
+            <span>10×12 м</span>
+            <span>130 м²</span>
+            <span>4 спальни</span>
+          </div>
+          <p class="model-description">Большой семейный дом с кабинетом, гардеробной и просторной террасой.</p>
+          <div class="model-price">4.5 млн ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Преимущества Барнхауса</h2>
+      <div class="advantages-grid" data-aos="fade-up">
+        <div class="advantage-card">
+          <div class="advantage-icon">🪟</div>
+          <h4>Панорамные окна</h4>
+          <p>Максимум естественного света и вид на природу</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">📐</div>
+          <h4>Свободная планировка</h4>
+          <p>Открытые пространства без лишних перегородок</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">🌡️</div>
+          <h4>Энергоэффективность</h4>
+          <p>Утепление 250 мм, экономия на отоплении до 40%</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">🎨</div>
+          <h4>Современный дизайн</h4>
+          <p>Скандинавский минимализм с русским характером</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Что входит в стоимость</h2>
+      <div class="included-grid" data-aos="fade-up">
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Фундамент УШП или сваи</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Каркас LVL-брус</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Утепление 250 мм</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Фальцевая кровля</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Панорамные окна</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Терраса</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Внутренняя отделка</span>
+        </div>
+        <div class="included-item">
+          <span class="check">✓</span>
+          <span>Инженерные сети</span>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Галерея</h2>
+      <div class="gallery" data-aos="fade-up">
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🏠</span>
+            <p>Барнхаус экстерьер</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🛋️</span>
+            <p>Гостиная</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🍳</span>
+            <p>Кухня</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🛏️</span>
+            <p>Спальня</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Оставить заявку</h2>
+      <div class="form-wrapper" data-aos="fade-up">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Выберите модель</option>
+              <option value="s">Барнхаус S (60 м²)</option>
+              <option value="m">Барнхаус M (90 м²)</option>
+              <option value="l">Барнхаус L (130 м²)</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Дополнительные пожелания"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-lg">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
+          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Проекты</h4>
+          <a href="a-frame.html">А-фрейм</a>
+          <a href="barnhouse.html">Барнхаус</a>
+          <a href="modular.html">Модульные дома</a>
+          <a href="saunas-tubs.html">Бани и купели</a>
+        </div>
+        <div class="footer-links">
+          <h4>Услуги</h4>
+          <a href="land.html">Оформление земли</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p>📞 +7 (989) 232-11-77</p>
+          <p>📍 г. Сочи, ул. Горького, 87</p>
+          <p>✉️ info@domnayuge.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Modal -->
+  <div id="aiModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="ai-avatar">🤖</span>
+          <div>
+            <h3>ИИ-консультант</h3>
+            <span class="ai-status">Онлайн</span>
+          </div>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+          <span class="message-avatar">🤖</span>
+          <div class="message-content">
+            Здравствуйте! Я ИИ-консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-wrapper">
+        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
+        <button onclick="sendMessage()" class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <span class="cookie-icon">🍪</span>
+        <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Продолжая использовать сайт, вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+        <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
+

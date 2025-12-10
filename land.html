@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Оформление земли — Дом на юге</title>
+  <meta name="description" content="Помощь в оформлении земельных участков. Подбор, юридическое сопровождение, регистрация права собственности.">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Главная</a>
+        <a href="a-frame.html">А-фрейм</a>
+        <a href="barnhouse.html">Барнхаус</a>
+        <a href="modular.html">Модульные дома</a>
+        <a href="saunas-tubs.html">Бани и купели</a>
+        <a href="land.html" class="active">Оформление земли</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="btn-primary" onclick="openModal()">
+        <span class="btn-icon">💬</span> Задать вопрос ИИ
+      </button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero page-hero-land">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="hero-badge" data-aos="fade-down">📋 Юридические услуги</span>
+      <h1 data-aos="fade-up">Оформление земли</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Поможем подобрать участок и оформить документы.<br>Полное юридическое сопровождение сделки.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro-block" data-aos="fade-up">
+        <h2>Ваш участок — наша забота</h2>
+        <p>Покупка земельного участка — ответственный шаг. Мы поможем вам пройти этот путь безопасно: от подбора подходящего участка до получения свидетельства о праве собственности. Работаем по всему Краснодарскому краю и Республике Адыгея.</p>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Наши услуги</h2>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">🔍</div>
+          <h3>Подбор участка</h3>
+          <p>Подберём участок под ваши требования: размер, расположение, коммуникации, видовые характеристики.</p>
+          <ul class="service-list">
+            <li>Анализ ваших потребностей</li>
+            <li>Поиск по базе участков</li>
+            <li>Выезд и осмотр</li>
+            <li>Проверка документов</li>
+          </ul>
+          <div class="service-price">от 15 000 ₽</div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">⚖️</div>
+          <h3>Юридическая проверка</h3>
+          <p>Проверим юридическую чистоту участка и исключим риски при покупке.</p>
+          <ul class="service-list">
+            <li>Проверка права собственности</li>
+            <li>Анализ обременений</li>
+            <li>Проверка по базам судебных дел</li>
+            <li>Заключение юриста</li>
+          </ul>
+          <div class="service-price">от 10 000 ₽</div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">📝</div>
+          <h3>Сопровождение сделки</h3>
+          <p>Полное сопровождение сделки купли-продажи от переговоров до регистрации.</p>
+          <ul class="service-list">
+            <li>Подготовка договора</li>
+            <li>Организация расчётов</li>
+            <li>Нотариальное заверение</li>
+            <li>Регистрация в Росреестре</li>
+          </ul>
+          <div class="service-price">от 25 000 ₽</div>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Популярные локации</h2>
+      <div class="locations-grid" data-aos="fade-up">
+        <div class="location-card">
+          <div class="location-icon">🏔️</div>
+          <h4>Горячий Ключ</h4>
+          <p>Горный воздух, термальные источники</p>
+          <span class="location-price">от 200 тыс/сот</span>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">🌊</div>
+          <h4>Геленджик</h4>
+          <p>Морское побережье, развитая инфраструктура</p>
+          <span class="location-price">от 400 тыс/сот</span>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">🌲</div>
+          <h4>Апшеронский район</h4>
+          <p>Горы, леса, уединение</p>
+          <span class="location-price">от 80 тыс/сот</span>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">🍇</div>
+          <h4>Анапа</h4>
+          <p>Песчаные пляжи, виноградники</p>
+          <span class="location-price">от 300 тыс/сот</span>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">⛷️</div>
+          <h4>Красная Поляна</h4>
+          <p>Горнолыжный курорт, премиум-сегмент</p>
+          <span class="location-price">от 800 тыс/сот</span>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">🌾</div>
+          <h4>Майкоп (Адыгея)</h4>
+          <p>Плодородные земли, тишина</p>
+          <span class="location-price">от 50 тыс/сот</span>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Как мы работаем</h2>
+      <div class="process-steps" data-aos="fade-up">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h4>Консультация</h4>
+          <p>Обсуждаем ваши требования и бюджет</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h4>Подбор</h4>
+          <p>Находим подходящие варианты</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h4>Проверка</h4>
+          <p>Юридическая экспертиза участка</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h4>Сделка</h4>
+          <p>Оформление и регистрация</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h4>Строительство</h4>
+          <p>Строим дом вашей мечты</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Получить консультацию</h2>
+      <div class="form-wrapper" data-aos="fade-up">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Интересующая услуга</option>
+              <option value="podbor">Подбор участка</option>
+              <option value="proverka">Юридическая проверка</option>
+              <option value="sdelka">Сопровождение сделки</option>
+              <option value="all">Комплексная услуга</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Опишите ваши требования к участку (размер, расположение, бюджет)"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-lg">Получить консультацию</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
+          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Проекты</h4>
+          <a href="a-frame.html">А-фрейм</a>
+          <a href="barnhouse.html">Барнхаус</a>
+          <a href="modular.html">Модульные дома</a>
+          <a href="saunas-tubs.html">Бани и купели</a>
+        </div>
+        <div class="footer-links">
+          <h4>Услуги</h4>
+          <a href="land.html">Оформление земли</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p>📞 +7 (989) 232-11-77</p>
+          <p>📍 г. Сочи, ул. Горького, 87</p>
+          <p>✉️ info@domnayuge.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Modal -->
+  <div id="aiModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="ai-avatar">🤖</span>
+          <div>
+            <h3>ИИ-консультант</h3>
+            <span class="ai-status">Онлайн</span>
+          </div>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+          <span class="message-avatar">🤖</span>
+          <div class="message-content">
+            Здравствуйте! Я ИИ-консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-wrapper">
+        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
+        <button onclick="sendMessage()" class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <span class="cookie-icon">🍪</span>
+        <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Продолжая использовать сайт, вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+        <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
+

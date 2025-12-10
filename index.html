@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Дом на юге — Каркасные дома для отдыха и инвестиций</title>
+  <meta name="description" content="Современные каркасные дома на юге России для отдыха и инвестиций. А-фреймы, барнхаусы, бани и купели. Готовы за 7 дней.">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html" class="active">Главная</a>
+        <a href="a-frame.html">А-фрейм</a>
+        <a href="barnhouse.html">Барнхаус</a>
+        <a href="modular.html">Модульные дома</a>
+        <a href="saunas-tubs.html">Бани и купели</a>
+        <a href="land.html">Оформление земли</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="btn-primary" onclick="openModal()">Оставить заявку</button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-new">
+    <div class="hero-top">
+      <div class="hero-content">
+        <h1 data-aos="fade-up">Каркасные дома<br><span class="gradient-text">для отдыха и инвестиций</span></h1>
+        <div class="hero-categories" data-aos="fade-up" data-aos-delay="100">
+          <a href="a-frame.html">А-фреймы</a>
+          <a href="barnhouse.html">Барнхаусы</a>
+          <a href="saunas-tubs.html">Бани и купели</a>
+          <a href="land.html">Земельные участки</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <div class="hero-image-wrapper">
+        <div class="hero-image"></div>
+        <a href="a-frame.html" class="hero-cta-button" data-aos="fade-up" data-aos-delay="200">
+          Выбрать проект
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция "Мы поможем" как на yardrey.ru -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content" data-aos="fade-right">
+          <h2>Мы поможем вам построить<br><span class="gradient-text">дом вашей мечты</span></h2>
+          <p>Строим современные каркасные дома на живописном юге России. Предлагаем готовые решения от компактных А-фреймов до просторных барнхаусов. Полный цикл: от выбора участка до заселения.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="feature-check">✓</span>
+              <span>Собственное производство</span>
+            </div>
+            <div class="about-feature">
+              <span class="feature-check">✓</span>
+              <span>Фиксированная цена в договоре</span>
+            </div>
+            <div class="about-feature">
+              <span class="feature-check">✓</span>
+              <span>Гарантия 5 лет</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-team" data-aos="fade-left">
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="img/team-1.jpg" alt="Белов Александр Сергеевич">
+            </div>
+            <div class="team-info">
+              <h4>Руководитель компании Дом на Юге</h4>
+              <p>Белов Александр Сергеевич</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="img/team-2.jpg" alt="Барбухин Кирилл Евгеньевич">
+            </div>
+            <div class="team-info">
+              <h4>Специалист отдела продаж</h4>
+              <p>Барбухин Кирилл Евгеньевич</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Соцсети как на yardrey.ru -->
+  <section class="social-section">
+    <div class="container">
+      <p class="social-label" data-aos="fade-up">Присоединяйтесь к нам в соцсетях</p>
+      <div class="social-grid" data-aos="fade-up" data-aos-delay="100">
+        <a href="#" class="social-card">
+          <div class="social-icon-lg">📺</div>
+          <div class="social-info">
+            <span class="social-count">12.5 тыс.</span>
+            <span class="social-name">YouTube</span>
+          </div>
+        </a>
+        <a href="#" class="social-card">
+          <div class="social-icon-lg">💬</div>
+          <div class="social-info">
+            <span class="social-count">8.2 тыс.</span>
+            <span class="social-name">Telegram</span>
+          </div>
+        </a>
+        <a href="#" class="social-card">
+          <div class="social-icon-lg">📷</div>
+          <div class="social-info">
+            <span class="social-count">5.1 тыс.</span>
+            <span class="social-name">VK</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Проекты (карточки как на yardrey.ru) -->
+  <section class="projects-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Наши проекты</h2>
+      
+      <!-- Табы по типам -->
+      <div class="project-tabs" data-aos="fade-up">
+        <button class="tab-btn active">Все проекты</button>
+        <button class="tab-btn">А-фрейм</button>
+        <button class="tab-btn">Барнхаус</button>
+        <button class="tab-btn">Бани</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-aframe">
+                <div class="slide">
+                  <img src="img/aframe-3.jpg" alt="А-фрейм дом" onclick="openImageModal('img/aframe-3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/aframe-1.jpg" alt="А-фрейм дом" onclick="openImageModal('img/aframe-1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/aframe-2.jpg" alt="А-фрейм дом" onclick="openImageModal('img/aframe-2.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('aframe', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('aframe', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('aframe', 0)"></span>
+                <span class="dot" onclick="goToSlide('aframe', 1)"></span>
+                <span class="dot" onclick="goToSlide('aframe', 2)"></span>
+              </div>
+            </div>
+            <div class="project-badges">
+              <span class="badge-type">А-фрейм</span>
+              <span class="badge-status">Хит продаж</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>А-фрейм Стандарт</h3>
+            <div class="project-specs">
+              <div class="spec">
+                <span class="spec-label">Площадь</span>
+                <span class="spec-value">от 24 м² до 80 м²</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Срок</span>
+                <span class="spec-value">7 дней</span>
+              </div>
+            </div>
+            <div class="project-price">от 990 000 ₽</div>
+            <div class="project-actions">
+              <a href="a-frame.html" class="btn-outline">Подробнее</a>
+              <button class="btn-primary" onclick="openModal()">Заказать</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-barnhouse">
+                <div class="slide">
+                  <img src="img/barnhouse-1.jpg" alt="Барнхаус" onclick="openImageModal('img/barnhouse-1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/barnhouse-2.jpg" alt="Барнхаус" onclick="openImageModal('img/barnhouse-2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/barnhouse-3.jpg" alt="Барнхаус" onclick="openImageModal('img/barnhouse-3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/barnhouse-4.jpg" alt="Барнхаус" onclick="openImageModal('img/barnhouse-4.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('barnhouse', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('barnhouse', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('barnhouse', 0)"></span>
+                <span class="dot" onclick="goToSlide('barnhouse', 1)"></span>
+                <span class="dot" onclick="goToSlide('barnhouse', 2)"></span>
+                <span class="dot" onclick="goToSlide('barnhouse', 3)"></span>
+              </div>
+            </div>
+            <div class="project-badges">
+              <span class="badge-type">Барнхаус</span>
+              <span class="badge-status">Популярный</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Барнхаус</h3>
+            <div class="project-specs">
+              <div class="spec">
+                <span class="spec-label">Площадь</span>
+                <span class="spec-value">от 24 м² до 80 м²</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Срок</span>
+                <span class="spec-value">14 дней</span>
+              </div>
+            </div>
+            <div class="project-price">от 990 000 ₽</div>
+            <div class="project-actions">
+              <a href="barnhouse.html" class="btn-outline">Подробнее</a>
+              <button class="btn-primary" onclick="openModal()">Заказать</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-sauna">
+                <div class="slide">
+                  <img src="img/sauna-5.jpg" alt="Бани" onclick="openImageModal('img/sauna-5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/sauna-1.jpg" alt="Бани" onclick="openImageModal('img/sauna-1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/sauna-2.jpg" alt="Бани" onclick="openImageModal('img/sauna-2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/sauna-3.jpg" alt="Бани" onclick="openImageModal('img/sauna-3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/sauna-4.jpg" alt="Бани" onclick="openImageModal('img/sauna-4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/sauna-6.jpg" alt="Бани" onclick="openImageModal('img/sauna-6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('sauna', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('sauna', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('sauna', 0)"></span>
+                <span class="dot" onclick="goToSlide('sauna', 1)"></span>
+                <span class="dot" onclick="goToSlide('sauna', 2)"></span>
+                <span class="dot" onclick="goToSlide('sauna', 3)"></span>
+                <span class="dot" onclick="goToSlide('sauna', 4)"></span>
+                <span class="dot" onclick="goToSlide('sauna', 5)"></span>
+              </div>
+            </div>
+            <div class="project-badges">
+              <span class="badge-type">Баня</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Бани</h3>
+            <div class="project-specs">
+              <div class="spec">
+                <span class="spec-label">Площадь</span>
+                <span class="spec-value">от 15 м² до 60 м²</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Срок</span>
+                <span class="spec-value">1 день</span>
+              </div>
+            </div>
+            <div class="project-price">от 790 000 ₽</div>
+            <div class="project-actions">
+              <a href="saunas-tubs.html" class="btn-outline">Подробнее</a>
+              <button class="btn-primary" onclick="openModal()">Заказать</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-modular">
+                <div class="slide">
+                  <img src="img/modular-1.jpg" alt="Модульные дома" onclick="openImageModal('img/modular-1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-2.jpg" alt="Модульные дома" onclick="openImageModal('img/modular-2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-3.jpg" alt="Модульные дома" onclick="openImageModal('img/modular-3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-4.jpg" alt="Модульные дома" onclick="openImageModal('img/modular-4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-5.jpg" alt="Модульные дома" onclick="openImageModal('img/modular-5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-6.jpg" alt="Модульные дома" onclick="openImageModal('img/modular-6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('modular', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('modular', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('modular', 0)"></span>
+                <span class="dot" onclick="goToSlide('modular', 1)"></span>
+                <span class="dot" onclick="goToSlide('modular', 2)"></span>
+                <span class="dot" onclick="goToSlide('modular', 3)"></span>
+                <span class="dot" onclick="goToSlide('modular', 4)"></span>
+                <span class="dot" onclick="goToSlide('modular', 5)"></span>
+              </div>
+            </div>
+            <div class="project-badges">
+              <span class="badge-type">Модульные дома</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Модульные дома</h3>
+            <div class="project-specs">
+              <div class="spec">
+                <span class="spec-label">Площадь</span>
+                <span class="spec-value">от 15 м² до 150 м²</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Срок</span>
+                <span class="spec-value">1 день</span>
+              </div>
+            </div>
+            <div class="project-price">от 980 000 ₽</div>
+            <div class="project-actions">
+              <a href="modular.html" class="btn-outline">Подробнее</a>
+              <button class="btn-primary" onclick="openModal()">Заказать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-more" data-aos="fade-up">
+        <a href="a-frame.html" class="btn-outline btn-lg">Смотреть все проекты →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Услуги</h2>
+      <div class="services-list">
+        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+          <span class="service-num">01</span>
+          <h3>Строительство домов под ключ</h3>
+          <p>А-фреймы, барнхаусы, дачные дома</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="150">
+          <span class="service-num">02</span>
+          <h3>Бани и купели</h3>
+          <p>Бани-бочки, купели с подогревом</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+          <span class="service-num">03</span>
+          <h3>Подбор участков</h3>
+          <p>Земля в Краснодарском крае и Адыгее</p>
+        </div>
+        <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+          <span class="service-num">04</span>
+          <h3>Юридическое сопровождение</h3>
+          <p>Проверка и оформление сделок</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Преимущества как на yardrey.ru -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Почему выбирают нас</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit-icon">✓</div>
+          <h3>Только реальные цены</h3>
+          <p>Никаких скрытых платежей. Цена в договоре — финальная цена.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="benefit-icon">✓</div>
+          <h3>Собственное производство</h3>
+          <p>Контролируем качество на всех этапах — от материалов до сборки.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-icon">✓</div>
+          <h3>Работаем в ваших интересах</h3>
+          <p>Подбираем решения как для себя. Честно расскажем о плюсах и минусах.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="benefit-icon">✓</div>
+          <h3>Гарантия качества</h3>
+          <p>5 лет гарантии на конструктив. Бесплатное обслуживание.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA секция -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Готовы обсудить ваш проект?</h2>
+        <p>Оставьте заявку и получите бесплатную консультацию и расчёт стоимости</p>
+        <div class="cta-buttons">
+          <button class="btn-primary btn-lg" onclick="openModal()">Оставить заявку</button>
+          <a href="tel:+79892321177" class="btn-outline btn-lg">+7 (989) 232-11-77</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
+          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Проекты</h4>
+          <a href="a-frame.html">А-фрейм</a>
+          <a href="barnhouse.html">Барнхаус</a>
+          <a href="modular.html">Модульные дома</a>
+          <a href="saunas-tubs.html">Бани и купели</a>
+        </div>
+        <div class="footer-links">
+          <h4>Услуги</h4>
+          <a href="land.html">Оформление земли</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p>📞 +7 (989) 232-11-77</p>
+          <p>📍 г. Сочи, ул. Горького, 87</p>
+          <p>✉️ info@domnayuge.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Modal -->
+  <div id="aiModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="ai-avatar">🤖</span>
+          <div>
+            <h3>Консультант</h3>
+            <span class="ai-status">● Онлайн</span>
+          </div>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+          <span class="message-avatar">🤖</span>
+          <div class="message-content">
+            Здравствуйте! Я консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-wrapper">
+        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
+        <button onclick="sendMessage()" class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <span class="cookie-icon">🍪</span>
+        <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Продолжая использовать сайт, вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+        <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  
+  <!-- Модальное окно для просмотра изображений -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <div class="image-modal-content" onclick="event.stopPropagation()">
+      <button class="image-modal-close" onclick="closeImageModal()">×</button>
+      <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+  </div>
+
+  <script>
+    // Слайдер для A-frame
+    let currentSlide = {
+      aframe: 0,
+      barnhouse: 0,
+      sauna: 0,
+      modular: 0
+    };
+
+    function changeSlide(sliderId, direction) {
+      const slider = document.getElementById('slider-' + sliderId);
+      const dots = slider.parentElement.querySelectorAll('.dot');
+      const slides = slider.querySelectorAll('.slide');
+      
+      currentSlide[sliderId] += direction;
+      
+      if (currentSlide[sliderId] < 0) {
+        currentSlide[sliderId] = slides.length - 1;
+      } else if (currentSlide[sliderId] >= slides.length) {
+        currentSlide[sliderId] = 0;
+      }
+      
+      slider.className = 'slider-track active-slide-' + currentSlide[sliderId];
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide[sliderId]);
+      });
+    }
+
+    function goToSlide(sliderId, index) {
+      const slider = document.getElementById('slider-' + sliderId);
+      const dots = slider.parentElement.querySelectorAll('.dot');
+      
+      currentSlide[sliderId] = index;
+      slider.className = 'slider-track active-slide-' + currentSlide[sliderId];
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    // Модальное окно для просмотра изображений
+    function openImageModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeImageModal();
+      }
+    });
+
+    // Автопрокрутка слайдеров только при наведении курсора
+    let sliderIntervals = {};
+    
+    function startSliderAutoPlay(sliderId) {
+      // Останавливаем предыдущий интервал, если есть
+      if (sliderIntervals[sliderId]) {
+        clearInterval(sliderIntervals[sliderId]);
+      }
+      
+      // Запускаем новый интервал
+      sliderIntervals[sliderId] = setInterval(() => {
+        const slider = document.getElementById('slider-' + sliderId);
+        if (slider) {
+          changeSlide(sliderId, 1);
+        }
+      }, 2000); // Меняем каждые 2 секунды при наведении
+    }
+    
+    function stopSliderAutoPlay(sliderId) {
+      if (sliderIntervals[sliderId]) {
+        clearInterval(sliderIntervals[sliderId]);
+        sliderIntervals[sliderId] = null;
+      }
+    }
+    
+    // Добавляем обработчики наведения на карточки
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = ['aframe', 'barnhouse', 'sauna', 'modular'];
+      cards.forEach(sliderId => {
+        const slider = document.getElementById('slider-' + sliderId);
+        if (slider) {
+          const card = slider.closest('.project-card');
+          if (card) {
+            card.addEventListener('mouseenter', () => {
+              startSliderAutoPlay(sliderId);
+            });
+            card.addEventListener('mouseleave', () => {
+              stopSliderAutoPlay(sliderId);
+              // Возвращаемся к первому слайду
+              goToSlide(sliderId, 0);
+            });
+          }
+        }
+      });
+    });
+  </script>
+  <script>AOS.init({ duration: 600, once: true, offset: 50 });</script>
+</body>
+</html>

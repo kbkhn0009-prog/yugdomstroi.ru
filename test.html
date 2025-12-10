@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест подключения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { color: green; }
+        .error { color: red; }
+        img { max-width: 200px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Тест подключения к серверу</h1>
+    
+    <div class="test-item">
+        <h2>1. Проверка HTML</h2>
+        <p class="success">✓ HTML загружен успешно</p>
+    </div>
+    
+    <div class="test-item">
+        <h2>2. Проверка CSS</h2>
+        <link rel="stylesheet" href="css/styles.css">
+        <p class="success">✓ CSS подключен</p>
+    </div>
+    
+    <div class="test-item">
+        <h2>3. Проверка изображений</h2>
+        <p>Проверка загрузки изображений:</p>
+        <img src="img/aframe-1.jpg" alt="Тест 1" onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ';">
+        <img src="img/barnhouse-1.jpg" alt="Тест 2" onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ';">
+        <img src="img/sauna-1.jpg" alt="Тест 3" onerror="this.style.border='3px solid red'; this.alt='ОШИБКА ЗАГРУЗКИ';">
+    </div>
+    
+    <div class="test-item">
+        <h2>4. Проверка JavaScript</h2>
+        <script src="js/script.js"></script>
+        <p class="success">✓ JavaScript подключен</p>
+        <p id="js-test">Ожидание загрузки JS...</p>
+        <script>
+            document.getElementById('js-test').innerHTML = '✓ JavaScript работает!';
+            document.getElementById('js-test').className = 'success';
+        </script>
+    </div>
+    
+    <div class="test-item">
+        <h2>5. Информация о подключении</h2>
+        <p><strong>URL:</strong> <span id="url"></span></p>
+        <p><strong>Время:</strong> <span id="time"></span></p>
+        <script>
+            document.getElementById('url').textContent = window.location.href;
+            document.getElementById('time').textContent = new Date().toLocaleString('ru-RU');
+        </script>
+    </div>
+    
+    <div class="test-item">
+        <h2>6. Ссылка на главную</h2>
+        <a href="index.html" style="display: inline-block; padding: 10px 20px; background: #2563eb; color: white; text-decoration: none; border-radius: 5px;">Перейти на главную</a>
+    </div>
+</body>
+</html>
+

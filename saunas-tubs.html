@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бани и купели — Дом на юге</title>
+  <meta name="description" content="Бани-бочки и купели с подогревом. Готовые решения для отдыха и бизнеса. Быстрая доставка и установка.">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <nav class="menu" id="menu">
+        <a href="index.html">Главная</a>
+        <a href="a-frame.html">А-фрейм</a>
+        <a href="barnhouse.html">Барнхаус</a>
+        <a href="modular.html">Модульные дома</a>
+        <a href="saunas-tubs.html" class="active">Бани и купели</a>
+        <a href="land.html">Оформление земли</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="btn-primary" onclick="openModal()">
+        <span class="btn-icon">💬</span> Задать вопрос ИИ
+      </button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero page-hero-sauna">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="hero-badge" data-aos="fade-down">🧖 Для души и тела</span>
+      <h1 data-aos="fade-up">Бани и купели</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Готовые бани-бочки и купели с подогревом.<br>Доставка и установка за 1 день.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="intro-block" data-aos="fade-up">
+        <h2>Идеальный отдых на вашем участке</h2>
+        <p>Мы производим и устанавливаем бани-бочки из сибирского кедра и алтайской лиственницы, а также купели с дровяным и электрическим подогревом. Все изделия готовы к использованию сразу после установки — никакой усадки, никакого ожидания.</p>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Бани-бочки</h2>
+      <div class="models-grid">
+        <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="model-badge">Компактная</div>
+          <div class="model-icon">🛖</div>
+          <h3>Баня-бочка 2 м</h3>
+          <div class="model-specs">
+            <span>2×2 м</span>
+            <span>2-3 чел.</span>
+            <span>Кедр</span>
+          </div>
+          <p class="model-description">Компактная парная для небольшого участка. Идеальна для дачи.</p>
+          <div class="model-price">350 тыс ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="model-badge">Хит продаж</div>
+          <div class="model-icon">🧖</div>
+          <h3>Баня-бочка 4 м</h3>
+          <div class="model-specs">
+            <span>4×2 м</span>
+            <span>4-6 чел.</span>
+            <span>Кедр</span>
+          </div>
+          <p class="model-description">Парная + помывочная. Оптимальный размер для семьи или компании.</p>
+          <div class="model-price">480 тыс ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="model-badge">Премиум</div>
+          <div class="model-icon">🏠</div>
+          <h3>Баня-бочка 6 м</h3>
+          <div class="model-specs">
+            <span>6×2.2 м</span>
+            <span>6-8 чел.</span>
+            <span>Лиственница</span>
+          </div>
+          <p class="model-description">Парная + помывочная + комната отдыха. Полноценный банный комплекс.</p>
+          <div class="model-price">650 тыс ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Купели</h2>
+      <div class="models-grid">
+        <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="model-icon">🛁</div>
+          <h3>Купель дровяная</h3>
+          <div class="model-specs">
+            <span>Ø 1.5 м</span>
+            <span>2-3 чел.</span>
+            <span>Кедр</span>
+          </div>
+          <p class="model-description">Классическая купель с внешней дровяной печью. Нагрев за 2-3 часа.</p>
+          <div class="model-price">180 тыс ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="model-badge">Популярная</div>
+          <div class="model-icon">🌊</div>
+          <h3>Купель с гидромассажем</h3>
+          <div class="model-specs">
+            <span>Ø 1.8 м</span>
+            <span>4-5 чел.</span>
+            <span>Лиственница</span>
+          </div>
+          <p class="model-description">Электрический нагрев + гидромассаж. Современный комфорт.</p>
+          <div class="model-price">320 тыс ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="model-icon">♨️</div>
+          <h3>Японская офуро</h3>
+          <div class="model-specs">
+            <span>1.5×1 м</span>
+            <span>1-2 чел.</span>
+            <span>Кедр</span>
+          </div>
+          <p class="model-description">Традиционная японская купель для медитации и релакса.</p>
+          <div class="model-price">250 тыс ₽</div>
+          <a href="contacts.html" class="btn-primary">Заказать</a>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Почему выбирают нас</h2>
+      <div class="advantages-grid" data-aos="fade-up">
+        <div class="advantage-card">
+          <div class="advantage-icon">🌲</div>
+          <h4>Сибирский кедр</h4>
+          <p>Используем только отборную древесину с Алтая</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">🚚</div>
+          <h4>Доставка по ЮФО</h4>
+          <p>Бесплатная доставка по Краснодарскому краю</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">🔧</div>
+          <h4>Установка за день</h4>
+          <p>Профессиональный монтаж нашей бригадой</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">📋</div>
+          <h4>Гарантия 3 года</h4>
+          <p>На все изделия и монтажные работы</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Галерея</h2>
+      <div class="gallery" data-aos="fade-up">
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🛖</span>
+            <p>Баня-бочка</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🧖</span>
+            <p>Интерьер парной</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🛁</span>
+            <p>Купель</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder">
+            <span>🌅</span>
+            <p>Вечерний вид</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title" data-aos="fade-up">Оставить заявку</h2>
+      <div class="form-wrapper" data-aos="fade-up">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Что вас интересует?</option>
+              <optgroup label="Бани-бочки">
+                <option value="banya-2">Баня-бочка 2 м</option>
+                <option value="banya-4">Баня-бочка 4 м</option>
+                <option value="banya-6">Баня-бочка 6 м</option>
+              </optgroup>
+              <optgroup label="Купели">
+                <option value="kupel-drov">Купель дровяная</option>
+                <option value="kupel-hydro">Купель с гидромассажем</option>
+                <option value="ofuro">Японская офуро</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Дополнительные пожелания"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-lg">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
+          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Проекты</h4>
+          <a href="a-frame.html">А-фрейм</a>
+          <a href="barnhouse.html">Барнхаус</a>
+          <a href="modular.html">Модульные дома</a>
+          <a href="saunas-tubs.html">Бани и купели</a>
+        </div>
+        <div class="footer-links">
+          <h4>Услуги</h4>
+          <a href="land.html">Оформление земли</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p>📞 +7 (989) 232-11-77</p>
+          <p>📍 г. Сочи, ул. Горького, 87</p>
+          <p>✉️ info@domnayuge.ru</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Modal -->
+  <div id="aiModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="ai-avatar">🤖</span>
+          <div>
+            <h3>ИИ-консультант</h3>
+            <span class="ai-status">Онлайн</span>
+          </div>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+      <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+          <span class="message-avatar">🤖</span>
+          <div class="message-content">
+            Здравствуйте! Я ИИ-консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-wrapper">
+        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
+        <button onclick="sendMessage()" class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <span class="cookie-icon">🍪</span>
+        <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Продолжая использовать сайт, вы соглашаетесь с <a href="#">Политикой конфиденциальности</a>.</p>
+      </div>
+      <div class="cookie-buttons">
+        <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
+        <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
+

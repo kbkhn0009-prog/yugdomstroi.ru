@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Админ-панель — Дом на юге</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .admin-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 24px 40px;
+    }
+    .admin-header {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .admin-header h1 {
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .btn-add {
+      background: var(--accent-primary);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .btn-add:hover {
+      background: var(--accent-hover);
+    }
+    .projects-grid {
+      margin-bottom: 48px;
+    }
+    .project-card {
+      cursor: pointer;
+      position: relative;
+    }
+    .project-card:hover {
+      border-color: var(--accent-primary) !important;
+    }
+    .edit-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      z-index: 10;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px;
+      position: relative;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .modal-header h2 {
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .close-modal:hover {
+      background: var(--bg-secondary);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .specs-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .spec-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .btn-save {
+      background: var(--accent-primary);
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 24px;
+    }
+    .btn-save:hover {
+      background: var(--accent-hover);
+    }
+    .btn-delete {
+      background: #ef4444;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 12px;
+      width: 100%;
+    }
+    .btn-delete:hover {
+      background: #dc2626;
+    }
+    .message {
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      display: none;
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #10b981;
+    }
+    .json-section {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 32px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .json-output {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin-top: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .btn-copy {
+      background: #64748b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+    .btn-copy:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <nav class="menu">
+        <a href="index.html">На главную</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1>Панель управления товарами</h1>
+      <button class="btn-add" onclick="openAddModal()">+ Добавить товар</button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <div class="projects-grid" id="products-container">
+      <!-- Карточки товаров загружаются динамически -->
+    </div>
+
+    <div class="json-section">
+      <h3>Скопировать обновленные данные</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 12px;">
+        После редактирования скопируйте JSON ниже и вставьте в файл <code>data/products.json</code>
+      </p>
+      <textarea id="json-output" class="json-output" readonly></textarea>
+      <button class="btn-copy" onclick="copyJSON()">Копировать JSON</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно редактирования -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Редактировать товар</h2>
+        <button class="close-modal" onclick="closeModal()">×</button>
+      </div>
+      
+      <form id="editForm">
+        <input type="hidden" id="editIndex">
+        
+        <div class="form-group">
+          <label>Название</label>
+          <input type="text" id="editTitle" required>
+        </div>
+
+        <div class="form-group">
+          <label>Тип (А-фрейм, Барнхаус, Баня и т.д.)</label>
+          <input type="text" id="editType">
+        </div>
+
+        <div class="form-group">
+          <label>Статус (Хит продаж, Популярный или оставьте пустым)</label>
+          <input type="text" id="editStatus">
+        </div>
+
+        <div class="form-group">
+          <label>Иконка (эмодзи, например: 🏔️, 🏠, 🧖)</label>
+          <input type="text" id="editIcon">
+        </div>
+
+        <div class="form-group">
+          <label>Цена (например: от 2.1 млн ₽)</label>
+          <input type="text" id="editPrice">
+        </div>
+
+        <div class="form-group">
+          <label>Ссылка на страницу (например: a-frame.html)</label>
+          <input type="text" id="editLink">
+        </div>
+
+        <div class="form-group">
+          <label>Характеристики</label>
+          <div class="specs-group" id="editSpecs">
+            <!-- Динамически добавляются поля -->
+          </div>
+          <button type="button" class="btn-add" style="background: #64748b; margin-top: 12px;" onclick="addSpecField()">+ Добавить характеристику</button>
+        </div>
+
+        <button type="submit" class="btn-save">Сохранить изменения</button>
+        <button type="button" class="btn-delete" onclick="confirmDelete()">Удалить товар</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let productsData = { products: [] };
+    let editingIndex = -1;
+    let specsCount = 0;
+
+    async function loadProducts() {
+      try {
+        const response = await fetch('data/products.json');
+        productsData = await response.json();
+        renderProducts();
+        updateJSONOutput();
+      } catch (error) {
+        console.error('Ошибка загрузки:', error);
+        showMessage('Ошибка загрузки данных. Проверьте наличие файла data/products.json');
+        productsData = { products: [] };
+        renderProducts();
+        updateJSONOutput();
+      }
+    }
+
+    function renderProducts() {
+      const container = document.getElementById('products-container');
+      if (!productsData.products || productsData.products.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); grid-column: 1/-1;">Нет товаров. Нажмите "Добавить товар"</p>';
+        return;
+      }
+
+      container.innerHTML = productsData.products.map((product, index) => {
+        const specsHtml = Object.entries(product.specs || {}).map(([key, value]) => `
+          <div class="spec">
+            <span class="spec-label">${escapeHtml(key)}</span>
+            <span class="spec-value">${escapeHtml(value)}</span>
+          </div>
+        `).join('');
+        
+        const statusBadge = product.status ? `<span class="badge-status">${escapeHtml(product.status)}</span>` : '';
+        
+        return `
+          <div class="project-card" onclick="openEditModal(${index})">
+            <div class="edit-badge">✏️ Нажмите для редактирования</div>
+            <div class="project-image" style="background: ${product.gradient || 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.15) 100%)'};">
+              <div class="project-icon">${product.icon || '🏠'}</div>
+              <div class="project-badges">
+                <span class="badge-type">${escapeHtml(product.type || '')}</span>
+                ${statusBadge}
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>${escapeHtml(product.title || '')}</h3>
+              <div class="project-specs">
+                ${specsHtml}
+              </div>
+              <div class="project-price">${escapeHtml(product.price || '')}</div>
+              <div class="project-actions">
+                <a href="${product.link || '#'}" class="btn-outline" onclick="event.stopPropagation()">Подробнее</a>
+                <button class="btn-primary" onclick="event.stopPropagation()">Заказать</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openEditModal(index) {
+      editingIndex = index;
+      const product = productsData.products[index];
+      
+      document.getElementById('editIndex').value = index;
+      document.getElementById('editTitle').value = product.title || '';
+      document.getElementById('editType').value = product.type || '';
+      document.getElementById('editStatus').value = product.status || '';
+      document.getElementById('editIcon').value = product.icon || '';
+      document.getElementById('editPrice').value = product.price || '';
+      document.getElementById('editLink').value = product.link || '';
+      
+      // Заполняем характеристики
+      const specsContainer = document.getElementById('editSpecs');
+      specsContainer.innerHTML = '';
+      specsCount = 0;
+      
+      Object.entries(product.specs || {}).forEach(([key, value]) => {
+        addSpecField(key, value);
+      });
+      
+      if (specsCount === 0) {
+        addSpecField();
+      }
+      
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    function openAddModal() {
+      editingIndex = -1;
+      document.getElementById('editForm').reset();
+      document.getElementById('editIndex').value = '';
+      document.getElementById('editSpecs').innerHTML = '';
+      specsCount = 0;
+      addSpecField();
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('editModal').classList.remove('active');
+    }
+
+    function addSpecField(key = '', value = '') {
+      const container = document.getElementById('editSpecs');
+      const specIndex = specsCount++;
+      const div = document.createElement('div');
+      div.className = 'spec-item';
+      div.innerHTML = `
+        <input type="text" placeholder="Название" value="${escapeHtml(key)}" data-spec-key="${specIndex}">
+        <input type="text" placeholder="Значение" value="${escapeHtml(value)}" data-spec-value="${specIndex}">
+      `;
+      container.appendChild(div);
+    }
+
+    document.getElementById('editForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const product = {
+        id: editingIndex >= 0 ? productsData.products[editingIndex].id : Date.now(),
+        title: document.getElementById('editTitle').value,
+        type: document.getElementById('editType').value,
+        status: document.getElementById('editStatus').value,
+        icon: document.getElementById('editIcon').value,
+        price: document.getElementById('editPrice').value,
+        link: document.getElementById('editLink').value,
+        specs: {},
+        gradient: editingIndex >= 0 && productsData.products[editingIndex].gradient 
+          ? productsData.products[editingIndex].gradient 
+          : 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(59, 130, 246, 0.15) 100%)'
+      };
+      
+      // Собираем характеристики
+      const specInputs = document.querySelectorAll('#editSpecs input');
+      for (let i = 0; i < specInputs.length; i += 2) {
+        const key = specInputs[i].value.trim();
+        const value = specInputs[i + 1] ? specInputs[i + 1].value.trim() : '';
+        if (key && value) {
+          product.specs[key] = value;
+        }
+      }
+      
+      if (editingIndex >= 0) {
+        productsData.products[editingIndex] = product;
+        showMessage('Товар обновлен!');
+      } else {
+        productsData.products.push(product);
+        showMessage('Товар добавлен!');
+      }
+      
+      renderProducts();
+      updateJSONOutput();
+      closeModal();
+    });
+
+    function confirmDelete() {
+      if (confirm('Удалить этот товар?')) {
+        productsData.products.splice(editingIndex, 1);
+        renderProducts();
+        updateJSONOutput();
+        closeModal();
+        showMessage('Товар удален!');
+      }
+    }
+
+    function updateJSONOutput() {
+      document.getElementById('json-output').textContent = JSON.stringify(productsData, null, 2);
+    }
+
+    function copyJSON() {
+      const jsonText = document.getElementById('json-output').textContent;
+      navigator.clipboard.writeText(jsonText).then(() => {
+        showMessage('JSON скопирован в буфер обмена! Скопируйте его в файл data/products.json');
+      });
+    }
+
+    function showMessage(text) {
+      const msgEl = document.getElementById('message');
+      msgEl.textContent = text;
+      msgEl.style.display = 'block';
+      setTimeout(() => {
+        msgEl.style.display = 'none';
+      }, 3000);
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Закрытие модального окна при клике вне его
+    document.getElementById('editModal').addEventListener('click', (e) => {
+      if (e.target.id === 'editModal') {
+        closeModal();
+      }
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>
