@@ -53,42 +53,54 @@
       <div class="models-grid">
         <div class="model-card" data-aos="fade-up" data-aos-delay="100">
           <div class="model-badge">Компактный</div>
-          <div class="model-icon">🏠</div>
-          <h3>Барнхаус S</h3>
-          <div class="model-specs">
-            <span>6×8 м</span>
-            <span>60 м²</span>
-            <span>2 спальни</span>
+          <div class="model-image">
+            <img src="img/barnhouse-2.jpg" alt="Барнхаус Лайт">
           </div>
-          <p class="model-description">Уютный дом для небольшой семьи. Просторная гостиная и две спальни.</p>
-          <div class="model-price">2.5 млн ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <h3>Барнхаус Лайт</h3>
+          <div class="model-specs">
+            <span>4×6 м</span>
+            <span>от 1.7 млн ₽</span>
+          </div>
+          <div class="model-specs">
+            <span>5×6 м</span>
+            <span>от 2.3 млн ₽</span>
+          </div>
+          <p class="model-description">Уютный дом для небольшой семьи. Просторная гостиная и комфортные комнаты.</p>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
           <div class="model-badge">Популярный</div>
-          <div class="model-icon">🏡</div>
-          <h3>Барнхаус M</h3>
+          <div class="model-image">
+            <img src="img/barnhouse-1.jpg" alt="Барнхаус Оптима">
+          </div>
+          <h3>Барнхаус Оптима</h3>
           <div class="model-specs">
-            <span>8×10 м</span>
-            <span>90 м²</span>
-            <span>3 спальни</span>
+            <span>5×7 м</span>
+            <span>от 2.5 млн ₽</span>
+          </div>
+          <div class="model-specs">
+            <span>5.5×9 м</span>
+            <span>от 3 млн ₽</span>
           </div>
           <p class="model-description">Идеальный баланс пространства и функциональности для семьи с детьми.</p>
-          <div class="model-price">3.2 млн ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card" data-aos="fade-up" data-aos-delay="300">
           <div class="model-badge">Премиум</div>
-          <div class="model-icon">🏰</div>
-          <h3>Барнхаус L</h3>
+          <div class="model-image">
+            <img src="img/barnhouse-3.jpg" alt="Барнхаус Макси">
+          </div>
+          <h3>Барнхаус Макси</h3>
           <div class="model-specs">
-            <span>10×12 м</span>
-            <span>130 м²</span>
-            <span>4 спальни</span>
+            <span>6×9 м</span>
+            <span>от 3.4 млн ₽</span>
+          </div>
+          <div class="model-specs">
+            <span>8×10 м</span>
+            <span>от 4 млн ₽</span>
           </div>
           <p class="model-description">Большой семейный дом с кабинетом, гардеробной и просторной террасой.</p>
-          <div class="model-price">4.5 млн ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
 
@@ -189,15 +201,12 @@
           <div class="form-group">
             <input type="tel" placeholder="Телефон" required />
           </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" />
-          </div>
           <div class="form-group full-width">
             <select>
               <option value="">Выберите модель</option>
-              <option value="s">Барнхаус S (60 м²)</option>
-              <option value="m">Барнхаус M (90 м²)</option>
-              <option value="l">Барнхаус L (130 м²)</option>
+              <option value="light">Барнхаус Лайт</option>
+              <option value="optimal">Барнхаус Оптима</option>
+              <option value="maxi">Барнхаус Макси</option>
             </select>
           </div>
           <div class="form-group full-width">
@@ -240,6 +249,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- Catalog Modal -->
+  <div id="catalogModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Оставить заявку</h3>
+        <span class="close" onclick="closeCatalogModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя *" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон *" required />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Что вас интересует?</option>
+              <option value="aframe">А-фрейм дома</option>
+              <option value="barnhouse">Барнхаус</option>
+              <option value="sauna">Бани и купели</option>
+              <option value="modular">Модульные дома</option>
+              <option value="land">Оформление земли</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Ваше сообщение" rows="4"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary btn-lg btn-full">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- AI Modal -->
   <div id="aiModal" class="modal">

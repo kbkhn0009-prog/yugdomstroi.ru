@@ -59,11 +59,14 @@
           <h3>А-фрейм Лайт</h3>
           <div class="model-specs">
             <span>4×6 м</span>
-            <span>24 м²</span>
+            <span>от 990 000 ₽</span>
+          </div>
+          <div class="model-specs">
+            <span>6×6 м</span>
+            <span>от 1.2 млн ₽</span>
           </div>
           <p class="model-description">Компактный вариант для пары или небольшой семьи. Идеален для выходных.</p>
-          <div class="model-price">от 990 000 ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
           <div class="model-badge">Рекомендуем</div>
@@ -72,12 +75,15 @@
           </div>
           <h3>А-фрейм Оптима</h3>
           <div class="model-specs">
-            <span>6×6 м</span>
-            <span>45 м²</span>
+            <span>6×7 м</span>
+            <span>от 2.3 млн ₽</span>
+          </div>
+          <div class="model-specs">
+            <span>6×8 м</span>
+            <span>от 2.5 млн ₽</span>
           </div>
           <p class="model-description">Оптимальный баланс площади и цены. Подходит для семьи с детьми.</p>
-          <div class="model-price">от 1.2 млн ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card" data-aos="fade-up" data-aos-delay="300">
           <div class="model-badge">Премиум</div>
@@ -87,11 +93,14 @@
           <h3>А-фрейм Макси</h3>
           <div class="model-specs">
             <span>6×9 м</span>
-            <span>70 м²</span>
+            <span>от 2.7 млн ₽</span>
+          </div>
+          <div class="model-specs">
+            <span>7.5×9 м</span>
+            <span>от 4.2 млн ₽</span>
           </div>
           <p class="model-description">Просторный дом с лофтом. Панорамное остекление, терраса.</p>
-          <div class="model-price">от 2.7 млн ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
 
@@ -168,15 +177,12 @@
           <div class="form-group">
             <input type="tel" placeholder="Телефон" required />
           </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" />
-          </div>
           <div class="form-group full-width">
             <select>
               <option value="">Выберите модель</option>
-              <option value="light">А-фрейм Лайт (24 м²)</option>
-              <option value="optimal">А-фрейм Оптима (45 м²)</option>
-              <option value="maxi">А-фрейм Макси (70 м²)</option>
+              <option value="light">А-фрейм Лайт</option>
+              <option value="optimal">А-фрейм Оптима</option>
+              <option value="maxi">А-фрейм Макси</option>
             </select>
           </div>
           <div class="form-group full-width">
@@ -219,6 +225,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- Catalog Modal -->
+  <div id="catalogModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Оставить заявку</h3>
+        <span class="close" onclick="closeCatalogModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя *" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон *" required />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Что вас интересует?</option>
+              <option value="aframe">А-фрейм дома</option>
+              <option value="barnhouse">Барнхаус</option>
+              <option value="sauna">Бани и купели</option>
+              <option value="modular">Модульные дома</option>
+              <option value="land">Оформление земли</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Ваше сообщение" rows="4"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary btn-lg btn-full">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- AI Modal -->
   <div id="aiModal" class="modal">

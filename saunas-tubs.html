@@ -62,7 +62,7 @@
           </div>
           <p class="model-description">Компактная парная для небольшого участка. Идеальна для дачи.</p>
           <div class="model-price">350 тыс ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
           <div class="model-badge">Хит продаж</div>
@@ -75,7 +75,7 @@
           </div>
           <p class="model-description">Парная + помывочная. Оптимальный размер для семьи или компании.</p>
           <div class="model-price">480 тыс ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card" data-aos="fade-up" data-aos-delay="300">
           <div class="model-badge">Премиум</div>
@@ -88,7 +88,7 @@
           </div>
           <p class="model-description">Парная + помывочная + комната отдыха. Полноценный банный комплекс.</p>
           <div class="model-price">650 тыс ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
 
@@ -104,7 +104,7 @@
           </div>
           <p class="model-description">Классическая купель с внешней дровяной печью. Нагрев за 2-3 часа.</p>
           <div class="model-price">180 тыс ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
           <div class="model-badge">Популярная</div>
@@ -117,7 +117,7 @@
           </div>
           <p class="model-description">Электрический нагрев + гидромассаж. Современный комфорт.</p>
           <div class="model-price">320 тыс ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card" data-aos="fade-up" data-aos-delay="300">
           <div class="model-icon">♨️</div>
@@ -129,7 +129,7 @@
           </div>
           <p class="model-description">Традиционная японская купель для медитации и релакса.</p>
           <div class="model-price">250 тыс ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
 
@@ -194,9 +194,6 @@
           <div class="form-group">
             <input type="tel" placeholder="Телефон" required />
           </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" />
-          </div>
           <div class="form-group full-width">
             <select>
               <option value="">Что вас интересует?</option>
@@ -252,6 +249,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- Catalog Modal -->
+  <div id="catalogModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Оставить заявку</h3>
+        <span class="close" onclick="closeCatalogModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя *" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон *" required />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Что вас интересует?</option>
+              <option value="aframe">А-фрейм дома</option>
+              <option value="barnhouse">Барнхаус</option>
+              <option value="sauna">Бани и купели</option>
+              <option value="modular">Модульные дома</option>
+              <option value="land">Оформление земли</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Ваше сообщение" rows="4"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary btn-lg btn-full">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- AI Modal -->
   <div id="aiModal" class="modal">

@@ -34,7 +34,7 @@
   <section class="hero-new">
     <div class="hero-top">
       <div class="hero-content">
-        <h1 data-aos="fade-up">Каркасные дома<br><span class="gradient-text">для отдыха и инвестиций</span></h1>
+        <h1 data-aos="fade-up">Комплексные решения<br><span class="gradient-text">для отдыха и инвестиций</span></h1>
         <div class="hero-categories" data-aos="fade-up" data-aos-delay="100">
           <a href="a-frame.html">А-фреймы</a>
           <a href="barnhouse.html">Барнхаусы</a>
@@ -46,12 +46,12 @@
     <div class="hero-bottom">
       <div class="hero-image-wrapper">
         <div class="hero-image"></div>
-        <a href="a-frame.html" class="hero-cta-button" data-aos="fade-up" data-aos-delay="200">
-          Выбрать проект
+        <button class="hero-cta-button" onclick="openCatalogModal()" data-aos="fade-up" data-aos-delay="200">
+          Получить каталог
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M7 17L17 7M17 7H7M17 7V17"/>
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -102,32 +102,61 @@
     </div>
   </section>
 
-  <!-- Соцсети как на yardrey.ru -->
-  <section class="social-section">
+  <!-- График роста запросов -->
+  <section class="stats-section">
     <div class="container">
-      <p class="social-label" data-aos="fade-up">Присоединяйтесь к нам в соцсетях</p>
-      <div class="social-grid" data-aos="fade-up" data-aos-delay="100">
-        <a href="#" class="social-card">
-          <div class="social-icon-lg">📺</div>
-          <div class="social-info">
-            <span class="social-count">12.5 тыс.</span>
-            <span class="social-name">YouTube</span>
+      <h2 class="section-title" data-aos="fade-up">Рост запросов на бронирование</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Динамика интереса к каркасным домам за последние годы</p>
+      <div class="chart-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="chart-wrapper">
+          <div class="chart-bars">
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="height: 9%;" data-value="100">
+                <span class="chart-value">100 тыс</span>
+              </div>
+              <span class="chart-year">2020</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="height: 27%;" data-value="300">
+                <span class="chart-value">300 тыс</span>
+              </div>
+              <span class="chart-year">2021</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="height: 45%;" data-value="500">
+                <span class="chart-value">500 тыс</span>
+              </div>
+              <span class="chart-year">2022</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="height: 64%;" data-value="700">
+                <span class="chart-value">700 тыс</span>
+              </div>
+              <span class="chart-year">2023</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="height: 82%;" data-value="900">
+                <span class="chart-value">900 тыс</span>
+              </div>
+              <span class="chart-year">2024</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="height: 100%;" data-value="1100">
+                <span class="chart-value">1.1 млн</span>
+              </div>
+              <span class="chart-year">2025</span>
+            </div>
           </div>
-        </a>
-        <a href="#" class="social-card">
-          <div class="social-icon-lg">💬</div>
-          <div class="social-info">
-            <span class="social-count">8.2 тыс.</span>
-            <span class="social-name">Telegram</span>
+          <div class="chart-y-axis">
+            <span>1.2 млн</span>
+            <span>1 млн</span>
+            <span>800 тыс</span>
+            <span>600 тыс</span>
+            <span>400 тыс</span>
+            <span>200 тыс</span>
+            <span>0</span>
           </div>
-        </a>
-        <a href="#" class="social-card">
-          <div class="social-icon-lg">📷</div>
-          <div class="social-info">
-            <span class="social-count">5.1 тыс.</span>
-            <span class="social-name">VK</span>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
@@ -188,7 +217,7 @@
             <div class="project-price">от 990 000 ₽</div>
             <div class="project-actions">
               <a href="a-frame.html" class="btn-outline">Подробнее</a>
-              <button class="btn-primary" onclick="openModal()">Заказать</button>
+              <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
             </div>
           </div>
         </div>
@@ -239,7 +268,7 @@
             <div class="project-price">от 990 000 ₽</div>
             <div class="project-actions">
               <a href="barnhouse.html" class="btn-outline">Подробнее</a>
-              <button class="btn-primary" onclick="openModal()">Заказать</button>
+              <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
             </div>
           </div>
         </div>
@@ -297,7 +326,7 @@
             <div class="project-price">от 790 000 ₽</div>
             <div class="project-actions">
               <a href="saunas-tubs.html" class="btn-outline">Подробнее</a>
-              <button class="btn-primary" onclick="openModal()">Заказать</button>
+              <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
             </div>
           </div>
         </div>
@@ -355,7 +384,7 @@
             <div class="project-price">от 980 000 ₽</div>
             <div class="project-actions">
               <a href="modular.html" class="btn-outline">Подробнее</a>
-              <button class="btn-primary" onclick="openModal()">Заказать</button>
+              <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
             </div>
           </div>
         </div>
@@ -470,6 +499,78 @@
       </div>
     </div>
   </footer>
+
+  <!-- Соцсети как на yardrey.ru -->
+  <section class="social-section">
+    <div class="container">
+      <p class="social-label" data-aos="fade-up">Присоединяйтесь к нам в соцсетях</p>
+      <div class="social-grid" data-aos="fade-up" data-aos-delay="100">
+        <a href="#" class="social-card">
+          <div class="social-icon-lg">📺</div>
+          <div class="social-info">
+            <span class="social-count">12.5 тыс.</span>
+            <span class="social-name">YouTube</span>
+          </div>
+        </a>
+        <a href="#" class="social-card">
+          <div class="social-icon-lg">💬</div>
+          <div class="social-info">
+            <span class="social-count">8.2 тыс.</span>
+            <span class="social-name">Telegram</span>
+          </div>
+        </a>
+        <a href="#" class="social-card">
+          <div class="social-icon-lg">📷</div>
+          <div class="social-info">
+            <span class="social-count">5.1 тыс.</span>
+            <span class="social-name">VK</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Modal -->
+  <div id="catalogModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Оставить заявку</h3>
+        <span class="close" onclick="closeCatalogModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя *" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон *" required />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Что вас интересует?</option>
+              <option value="aframe">А-фрейм дома</option>
+              <option value="barnhouse">Барнхаус</option>
+              <option value="sauna">Бани и купели</option>
+              <option value="modular">Модульные дома</option>
+              <option value="land">Оформление земли</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Ваше сообщение" rows="4"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary btn-lg btn-full">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- AI Modal -->
   <div id="aiModal" class="modal">

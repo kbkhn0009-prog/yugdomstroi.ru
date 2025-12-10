@@ -85,42 +85,99 @@
       <div class="models-grid">
         <div class="model-card" data-aos="fade-up" data-aos-delay="100">
           <div class="model-badge">Компактный</div>
-          <div class="model-icon">🏠</div>
-          <h3>Studio 24</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-studio">
+                <div class="slide">
+                  <img src="img/modular-1.jpg" alt="Studio" onclick="openImageModal('img/modular-1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-2.jpg" alt="Studio" onclick="openImageModal('img/modular-2.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('studio', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('studio', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('studio', 0)"></span>
+                <span class="dot" onclick="goToSlide('studio', 1)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Studio</h3>
           <div class="model-specs">
-            <span>24 м²</span>
-            <span>1 комната</span>
-            <span>Санузел</span>
+            <span>от 15 до 30 м²</span>
+            <span>от 980 000 ₽</span>
           </div>
           <p class="model-description">Компактный модуль для одного человека или пары. Кухня-ниша, санузел, жилая комната.</p>
-          <div class="model-price">1 450 000 ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
           <div class="model-badge">Популярный</div>
-          <div class="model-icon">🏡</div>
-          <h3>Comfort 36</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-comfort">
+                <div class="slide">
+                  <img src="img/modular-3.jpg" alt="Comfort" onclick="openImageModal('img/modular-3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-4.jpg" alt="Comfort" onclick="openImageModal('img/modular-4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-5.jpg" alt="Comfort" onclick="openImageModal('img/modular-5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-6.jpg" alt="Comfort" onclick="openImageModal('img/modular-6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('comfort', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('comfort', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('comfort', 0)"></span>
+                <span class="dot" onclick="goToSlide('comfort', 1)"></span>
+                <span class="dot" onclick="goToSlide('comfort', 2)"></span>
+                <span class="dot" onclick="goToSlide('comfort', 3)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Comfort</h3>
           <div class="model-specs">
-            <span>36 м²</span>
-            <span>2 комнаты</span>
-            <span>Терраса</span>
+            <span>от 30 до 60 м²</span>
+            <span>от 1.2 млн ₽</span>
           </div>
           <p class="model-description">Оптимальный вариант для небольшой семьи. 2 комнаты, кухня, санузел и терраса.</p>
-          <div class="model-price">1 950 000 ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card" data-aos="fade-up" data-aos-delay="300">
           <div class="model-badge">Семейный</div>
-          <div class="model-icon">🏘️</div>
-          <h3>Family 54</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-family">
+                <div class="slide">
+                  <img src="img/modular-7.jpg" alt="Family" onclick="openImageModal('img/modular-7.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-8.jpg" alt="Family" onclick="openImageModal('img/modular-8.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/modular-9.jpg" alt="Family" onclick="openImageModal('img/modular-9.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('family', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('family', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('family', 0)"></span>
+                <span class="dot" onclick="goToSlide('family', 1)"></span>
+                <span class="dot" onclick="goToSlide('family', 2)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Family</h3>
           <div class="model-specs">
-            <span>54 м²</span>
-            <span>3 комнаты</span>
-            <span>2 санузла</span>
+            <span>от 60 до 120 м²</span>
+            <span>от 2.4 млн ₽</span>
           </div>
           <p class="model-description">Просторный дом для семьи. 3 комнаты, кухня-гостиная, 2 санузла.</p>
-          <div class="model-price">2 750 000 ₽</div>
-          <a href="contacts.html" class="btn-primary">Заказать</a>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
 
@@ -197,15 +254,12 @@
           <div class="form-group">
             <input type="tel" placeholder="Телефон" required />
           </div>
-          <div class="form-group">
-            <input type="email" placeholder="Email" />
-          </div>
           <div class="form-group full-width">
             <select>
               <option value="">Выберите модель</option>
-              <option value="studio24">Studio 24 (24 м²)</option>
-              <option value="comfort36">Comfort 36 (36 м²)</option>
-              <option value="family54">Family 54 (54 м²)</option>
+              <option value="studio">Studio</option>
+              <option value="comfort">Comfort</option>
+              <option value="family">Family</option>
             </select>
           </div>
           <div class="form-group full-width">
@@ -248,6 +302,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- Catalog Modal -->
+  <div id="catalogModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Оставить заявку</h3>
+        <span class="close" onclick="closeCatalogModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 24px; color: var(--text-secondary);">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Ваше имя *" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Телефон *" required />
+          </div>
+          <div class="form-group full-width">
+            <select>
+              <option value="">Что вас интересует?</option>
+              <option value="aframe">А-фрейм дома</option>
+              <option value="barnhouse">Барнхаус</option>
+              <option value="sauna">Бани и купели</option>
+              <option value="modular">Модульные дома</option>
+              <option value="land">Оформление земли</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <textarea placeholder="Ваше сообщение" rows="4"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary btn-lg btn-full">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- AI Modal -->
   <div id="aiModal" class="modal">
@@ -293,6 +389,15 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/script.js"></script>
+  
+  <!-- Модальное окно для просмотра изображений -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <div class="image-modal-content" onclick="event.stopPropagation()">
+      <button class="image-modal-close" onclick="closeImageModal()">×</button>
+      <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+  </div>
+
   <script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>

@@ -97,10 +97,38 @@ window.addEventListener('click', (event) => {
   }
 });
 
+// ===============================================
+// CATALOG MODAL
+// ===============================================
+function openCatalogModal() {
+  const modal = document.getElementById('catalogModal');
+  if (modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeCatalogModal() {
+  const modal = document.getElementById('catalogModal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+// Close catalog modal on outside click
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById('catalogModal');
+  if (event.target === modal) {
+    closeCatalogModal();
+  }
+});
+
 // Close modal on Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeModal();
+    closeCatalogModal();
   }
 });
 
@@ -432,7 +460,10 @@ let currentSlide = {
   aframe: 0,
   barnhouse: 0,
   sauna: 0,
-  modular: 0
+  modular: 0,
+  studio: 0,
+  comfort: 0,
+  family: 0
 };
 let slideIntervals = {};
 
