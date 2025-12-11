@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Бани и купели — Дом на юге</title>
-  <meta name="description" content="Бани-бочки и купели с подогревом. Готовые решения для отдыха и бизнеса. Быстрая доставка и установка.">
+  <title>Бани и купели — Дом на ЮГЕ</title>
+  <meta name="description" content="Бани и купели с подогревом. Готовые решения для отдыха и бизнеса. Быстрая доставка и установка.">
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
   <header class="navbar">
     <div class="container nav-flex">
-      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮГЕ</span></a>
       <nav class="menu" id="menu">
         <a href="index.html">Главная</a>
         <a href="a-frame.html">А-фрейм</a>
@@ -22,9 +22,7 @@
         <a href="land.html">Оформление земли</a>
         <a href="contacts.html">Контакты</a>
       </nav>
-      <button class="btn-primary" onclick="openModal()">
-        <span class="btn-icon">💬</span> Задать вопрос ИИ
-      </button>
+      <button class="btn-primary" onclick="openModal()">Оставить заявку</button>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -38,7 +36,7 @@
     <div class="page-hero-content">
       <span class="hero-badge" data-aos="fade-down">🧖 Для души и тела</span>
       <h1 data-aos="fade-up">Бани и купели</h1>
-      <p data-aos="fade-up" data-aos-delay="200">Готовые бани-бочки и купели с подогревом.<br>Доставка и установка за 1 день.</p>
+      <p data-aos="fade-up" data-aos-delay="200">Готовые бани и купели с подогревом.<br>Доставка и установка за 1 день.</p>
     </div>
   </section>
 
@@ -46,89 +44,315 @@
     <div class="container">
       <div class="intro-block" data-aos="fade-up">
         <h2>Идеальный отдых на вашем участке</h2>
-        <p>Мы производим и устанавливаем бани-бочки из сибирского кедра и алтайской лиственницы, а также купели с дровяным и электрическим подогревом. Все изделия готовы к использованию сразу после установки — никакой усадки, никакого ожидания.</p>
+        <p>Мы производим и устанавливаем бани из сибирского кедра и алтайской лиственницы, а также купели с дровяным и электрическим подогревом. Все изделия готовы к использованию сразу после установки — никакой усадки, никакого ожидания.</p>
       </div>
 
-      <h2 class="section-title" data-aos="fade-up">Бани-бочки</h2>
-      <div class="models-grid">
+      <h2 class="section-title" data-aos="fade-up">Бани</h2>
+      <p style="text-align: center; font-size: 1.25rem; color: var(--text-secondary); margin-top: -16px; margin-bottom: 32px;" data-aos="fade-up" data-aos-delay="100">от 750 000 ₽</p>
+      <div class="models-grid saunas-grid">
         <div class="model-card" data-aos="fade-up" data-aos-delay="100">
           <div class="model-badge">Компактная</div>
-          <div class="model-icon">🛖</div>
-          <h3>Баня-бочка 2 м</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-barn">
+                <div class="slide">
+                  <img src="img/Barn sauna/1.jpg" alt="Баня Барн" onclick="openImageModal('img/Barn sauna/1.jpg', this)">
+                </div>
+                <div class="slide">
+                  <img src="img/Barn sauna/2.jpg" alt="Баня Барн" onclick="openImageModal('img/Barn sauna/2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Barn sauna/3.jpg" alt="Баня Барн" onclick="openImageModal('img/Barn sauna/3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Barn sauna/4,.jpg" alt="Баня Барн" onclick="openImageModal('img/Barn sauna/4,.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Barn sauna/5.jpg" alt="Баня Барн" onclick="openImageModal('img/Barn sauna/5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Barn sauna/6.jpg" alt="Баня Барн" onclick="openImageModal('img/Barn sauna/6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('barn', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('barn', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('barn', 0)"></span>
+                <span class="dot" onclick="goToSlide('barn', 1)"></span>
+                <span class="dot" onclick="goToSlide('barn', 2)"></span>
+                <span class="dot" onclick="goToSlide('barn', 3)"></span>
+                <span class="dot" onclick="goToSlide('barn', 4)"></span>
+                <span class="dot" onclick="goToSlide('barn', 5)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Баня Барн</h3>
           <div class="model-specs">
-            <span>2×2 м</span>
-            <span>2-3 чел.</span>
+            <span>5×6 м</span>
+            <span>4-6 чел.</span>
             <span>Кедр</span>
           </div>
           <p class="model-description">Компактная парная для небольшого участка. Идеальна для дачи.</p>
-          <div class="model-price">350 тыс ₽</div>
           <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
           <div class="model-badge">Хит продаж</div>
-          <div class="model-icon">🧖</div>
-          <h3>Баня-бочка 4 м</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-g-shaped">
+                <div class="slide">
+                  <img src="img/G Sauna/1.jpg" alt="Баня Г-образная" onclick="openImageModal('img/G Sauna/1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/G Sauna/2.jpg" alt="Баня Г-образная" onclick="openImageModal('img/G Sauna/2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/G Sauna/3.jpg" alt="Баня Г-образная" onclick="openImageModal('img/G Sauna/3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/G Sauna/4.jpg" alt="Баня Г-образная" onclick="openImageModal('img/G Sauna/4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/G Sauna/5.jpg" alt="Баня Г-образная" onclick="openImageModal('img/G Sauna/5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/G Sauna/6.jpg" alt="Баня Г-образная" onclick="openImageModal('img/G Sauna/6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('g-shaped', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('g-shaped', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('g-shaped', 0)"></span>
+                <span class="dot" onclick="goToSlide('g-shaped', 1)"></span>
+                <span class="dot" onclick="goToSlide('g-shaped', 2)"></span>
+                <span class="dot" onclick="goToSlide('g-shaped', 3)"></span>
+                <span class="dot" onclick="goToSlide('g-shaped', 4)"></span>
+                <span class="dot" onclick="goToSlide('g-shaped', 5)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Баня Г-образная</h3>
           <div class="model-specs">
-            <span>4×2 м</span>
+            <span>6×2.5 м</span>
             <span>4-6 чел.</span>
             <span>Кедр</span>
           </div>
           <p class="model-description">Парная + помывочная. Оптимальный размер для семьи или компании.</p>
-          <div class="model-price">480 тыс ₽</div>
           <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
         <div class="model-card" data-aos="fade-up" data-aos-delay="300">
           <div class="model-badge">Премиум</div>
-          <div class="model-icon">🏠</div>
-          <h3>Баня-бочка 6 м</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-z">
+                <div class="slide">
+                  <img src="img/Z Sauna/1.jpg" alt="Баня Z" onclick="openImageModal('img/Z Sauna/1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Z Sauna/2.jpg" alt="Баня Z" onclick="openImageModal('img/Z Sauna/2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Z Sauna/3.jpg" alt="Баня Z" onclick="openImageModal('img/Z Sauna/3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Z Sauna/4.jpg" alt="Баня Z" onclick="openImageModal('img/Z Sauna/4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Z Sauna/5.jpg" alt="Баня Z" onclick="openImageModal('img/Z Sauna/5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Z Sauna/6.jpg" alt="Баня Z" onclick="openImageModal('img/Z Sauna/6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('z', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('z', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('z', 0)"></span>
+                <span class="dot" onclick="goToSlide('z', 1)"></span>
+                <span class="dot" onclick="goToSlide('z', 2)"></span>
+                <span class="dot" onclick="goToSlide('z', 3)"></span>
+                <span class="dot" onclick="goToSlide('z', 4)"></span>
+                <span class="dot" onclick="goToSlide('z', 5)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Баня Z</h3>
           <div class="model-specs">
-            <span>6×2.2 м</span>
-            <span>6-8 чел.</span>
+            <span>7×2.5 м</span>
+            <span>4-6 чел.</span>
             <span>Лиственница</span>
           </div>
           <p class="model-description">Парная + помывочная + комната отдыха. Полноценный банный комплекс.</p>
-          <div class="model-price">650 тыс ₽</div>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="model-badge">Новинка</div>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-single">
+                <div class="slide">
+                  <img src="img/Modul Sauna/1.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/2.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/3.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/4.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/5.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/6.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/6.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/7.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/7.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/8.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/8.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/9.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/9.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Modul Sauna/10.jpg" alt="Баня одномодульная" onclick="openImageModal('img/Modul Sauna/10.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('single', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('single', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('single', 0)"></span>
+                <span class="dot" onclick="goToSlide('single', 1)"></span>
+                <span class="dot" onclick="goToSlide('single', 2)"></span>
+                <span class="dot" onclick="goToSlide('single', 3)"></span>
+                <span class="dot" onclick="goToSlide('single', 4)"></span>
+                <span class="dot" onclick="goToSlide('single', 5)"></span>
+                <span class="dot" onclick="goToSlide('single', 6)"></span>
+                <span class="dot" onclick="goToSlide('single', 7)"></span>
+                <span class="dot" onclick="goToSlide('single', 8)"></span>
+                <span class="dot" onclick="goToSlide('single', 9)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Баня одномодульная</h3>
+          <div class="model-specs">
+            <span>4×2.5м, 5×2.5м, 6×2.5м</span>
+            <span>2-4 чел.</span>
+            <span>Кедр</span>
+          </div>
+          <p class="model-description">Одномодульная конструкция для быстрой установки. Компактное решение.</p>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="model-badge">Современная</div>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-cub">
+                <div class="slide">
+                  <img src="img/CUB sauna/1.jpg" alt="Баня CUB" onclick="openImageModal('img/CUB sauna/1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/CUB sauna/2.jpg" alt="Баня CUB" onclick="openImageModal('img/CUB sauna/2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/CUB sauna/3.jpg" alt="Баня CUB" onclick="openImageModal('img/CUB sauna/3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/CUB sauna/4.jpg" alt="Баня CUB" onclick="openImageModal('img/CUB sauna/4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/CUB sauna/5.jpg" alt="Баня CUB" onclick="openImageModal('img/CUB sauna/5.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('cub', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('cub', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('cub', 0)"></span>
+                <span class="dot" onclick="goToSlide('cub', 1)"></span>
+                <span class="dot" onclick="goToSlide('cub', 2)"></span>
+                <span class="dot" onclick="goToSlide('cub', 3)"></span>
+                <span class="dot" onclick="goToSlide('cub', 4)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Баня CUB</h3>
+          <div class="model-specs">
+            <span>4.8×3.6 м</span>
+            <span>4-5 чел.</span>
+            <span>Лиственница</span>
+          </div>
+          <p class="model-description">Современный кубический дизайн. Максимальная функциональность в компактном формате.</p>
+          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
+        </div>
+        <div class="model-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="model-badge">Скандинавская</div>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-scandinavian">
+                <div class="slide">
+                  <img src="img/Scandinavia Sauna/1.jpg" alt="Баня Новая Скандинавия" onclick="openImageModal('img/Scandinavia Sauna/1.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Scandinavia Sauna/2.jpg" alt="Баня Новая Скандинавия" onclick="openImageModal('img/Scandinavia Sauna/2.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Scandinavia Sauna/3.jpg" alt="Баня Новая Скандинавия" onclick="openImageModal('img/Scandinavia Sauna/3.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Scandinavia Sauna/4.jpg" alt="Баня Новая Скандинавия" onclick="openImageModal('img/Scandinavia Sauna/4.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Scandinavia Sauna/5.jpg" alt="Баня Новая Скандинавия" onclick="openImageModal('img/Scandinavia Sauna/5.jpg')">
+                </div>
+                <div class="slide">
+                  <img src="img/Scandinavia Sauna/6.jpg" alt="Баня Новая Скандинавия" onclick="openImageModal('img/Scandinavia Sauna/6.jpg')">
+                </div>
+              </div>
+              <button class="slider-btn prev" onclick="changeSlide('scandinavian', -1)">‹</button>
+              <button class="slider-btn next" onclick="changeSlide('scandinavian', 1)">›</button>
+              <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide('scandinavian', 0)"></span>
+                <span class="dot" onclick="goToSlide('scandinavian', 1)"></span>
+                <span class="dot" onclick="goToSlide('scandinavian', 2)"></span>
+                <span class="dot" onclick="goToSlide('scandinavian', 3)"></span>
+                <span class="dot" onclick="goToSlide('scandinavian', 4)"></span>
+                <span class="dot" onclick="goToSlide('scandinavian', 5)"></span>
+              </div>
+            </div>
+          </div>
+          <h3>Баня Новая Скандинавия</h3>
+          <div class="model-specs">
+            <span>2.5×6 м</span>
+            <span>6-8 чел.</span>
+            <span>Лиственница</span>
+          </div>
+          <p class="model-description">Скандинавский стиль с минималистичным дизайном. Просторная парная и комната отдыха.</p>
           <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
 
       <h2 class="section-title" data-aos="fade-up">Купели</h2>
-      <div class="models-grid">
+      <div class="models-grid saunas-grid">
         <div class="model-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="model-icon">🛁</div>
-          <h3>Купель дровяная</h3>
+          <div class="project-image-slider">
+            <div class="slider-container">
+              <div class="slider-track active-slide-0" id="slider-chan">
+                <div class="slide">
+                  <img src="img/Chan/1.jpg" alt="Чан на дровах" onclick="openImageModal('img/Chan/1.jpg', this)">
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Чан на дровах</h3>
           <div class="model-specs">
             <span>Ø 1.5 м</span>
-            <span>2-3 чел.</span>
+            <span>2-4 чел.</span>
             <span>Кедр</span>
           </div>
           <p class="model-description">Классическая купель с внешней дровяной печью. Нагрев за 2-3 часа.</p>
-          <div class="model-price">180 тыс ₽</div>
-          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
-        </div>
-        <div class="model-card featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="model-badge">Популярная</div>
-          <div class="model-icon">🌊</div>
-          <h3>Купель с гидромассажем</h3>
-          <div class="model-specs">
-            <span>Ø 1.8 м</span>
-            <span>4-5 чел.</span>
-            <span>Лиственница</span>
-          </div>
-          <p class="model-description">Электрический нагрев + гидромассаж. Современный комфорт.</p>
-          <div class="model-price">320 тыс ₽</div>
-          <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
-        </div>
-        <div class="model-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="model-icon">♨️</div>
-          <h3>Японская офуро</h3>
-          <div class="model-specs">
-            <span>1.5×1 м</span>
-            <span>1-2 чел.</span>
-            <span>Кедр</span>
-          </div>
-          <p class="model-description">Традиционная японская купель для медитации и релакса.</p>
-          <div class="model-price">250 тыс ₽</div>
           <button class="btn-primary" onclick="openCatalogModal()">Заказать</button>
         </div>
       </div>
@@ -197,15 +421,13 @@
           <div class="form-group full-width">
             <select>
               <option value="">Что вас интересует?</option>
-              <optgroup label="Бани-бочки">
+              <optgroup label="Бани">
                 <option value="banya-2">Баня-бочка 2 м</option>
                 <option value="banya-4">Баня-бочка 4 м</option>
                 <option value="banya-6">Баня-бочка 6 м</option>
               </optgroup>
               <optgroup label="Купели">
-                <option value="kupel-drov">Купель дровяная</option>
-                <option value="kupel-hydro">Купель с гидромассажем</option>
-                <option value="ofuro">Японская офуро</option>
+                <option value="chan-drov">Чан на дровах</option>
               </optgroup>
             </select>
           </div>
@@ -222,8 +444,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
-          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+          <div class="logo">ДОМ<span class="accent">наЮГЕ</span></div>
+          <p>Строим современные каркасные дома на ЮГЕ России с 2018 года.</p>
         </div>
         <div class="footer-links">
           <h4>Проекты</h4>
@@ -245,7 +467,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+        <p>&copy; 2025 Дом на ЮГЕ. Все права защищены.</p>
       </div>
     </div>
   </footer>
@@ -292,33 +514,6 @@
     </div>
   </div>
 
-  <!-- AI Modal -->
-  <div id="aiModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          <span class="ai-avatar">🤖</span>
-          <div>
-            <h3>ИИ-консультант</h3>
-            <span class="ai-status">Онлайн</span>
-          </div>
-        </div>
-        <span class="close" onclick="closeModal()">&times;</span>
-      </div>
-      <div id="chatBox" class="chat-box">
-        <div class="ai-message">
-          <span class="message-avatar">🤖</span>
-          <div class="message-content">
-            Здравствуйте! Я ИИ-консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
-          </div>
-        </div>
-      </div>
-      <div class="chat-input-wrapper">
-        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
-        <button onclick="sendMessage()" class="send-btn">➤</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Cookie Banner -->
   <div id="cookieBanner" class="cookie-banner">
@@ -331,6 +526,14 @@
         <button class="btn-cookie-accept" onclick="acceptCookies()">Принять</button>
         <button class="btn-cookie-decline" onclick="declineCookies()">Отклонить</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для просмотра изображений -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <div class="image-modal-content" onclick="event.stopPropagation()">
+      <button class="image-modal-close" onclick="closeImageModal()">×</button>
+      <img id="modalImage" src="" alt="Увеличенное изображение">
     </div>
   </div>
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Контакты — Дом на юге</title>
-  <meta name="description" content="Свяжитесь с нами для заказа каркасного дома или консультации. Работаем по Краснодарскому краю и Адыгее.">
+  <title>Контакты — Дом на ЮГЕ</title>
+  <meta name="description" content="Свяжитесь с нами для заказа каркасного дома или консультации. Работаем по Сочи, Крыму и всему Краснодарскому краю.">
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
   <header class="navbar">
     <div class="container nav-flex">
-      <a href="index.html" class="logo">ДОМ<span class="accent">наЮге</span></a>
+      <a href="index.html" class="logo">ДОМ<span class="accent">наЮГЕ</span></a>
       <nav class="menu" id="menu">
         <a href="index.html">Главная</a>
         <a href="a-frame.html">А-фрейм</a>
@@ -22,9 +22,7 @@
         <a href="land.html">Оформление земли</a>
         <a href="contacts.html" class="active">Контакты</a>
       </nav>
-      <button class="btn-primary" onclick="openModal()">
-        <span class="btn-icon">💬</span> Задать вопрос ИИ
-      </button>
+      <button class="btn-primary" onclick="openModal()">Оставить заявку</button>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -151,7 +149,7 @@
           </div>
           <div class="faq-item">
             <h4>Вы работаете только в Краснодарском крае?</h4>
-            <p>Основная зона — ЮФО: Краснодарский край, Адыгея, Ростовская область. Но доставим дом в любую точку России.</p>
+            <p>Основная зона — Сочи, Крым и весь Краснодарский край. Но доставим дом в любую точку России.</p>
           </div>
           <div class="faq-item">
             <h4>Какая гарантия на дома?</h4>
@@ -170,8 +168,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo">ДОМ<span class="accent">наЮге</span></div>
-          <p>Строим современные каркасные дома на юге России с 2018 года.</p>
+          <div class="logo">ДОМ<span class="accent">наЮГЕ</span></div>
+          <p>Строим современные каркасные дома на ЮГЕ России с 2018 года.</p>
         </div>
         <div class="footer-links">
           <h4>Проекты</h4>
@@ -193,38 +191,11 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Дом на юге. Все права защищены.</p>
+        <p>&copy; 2025 Дом на ЮГЕ. Все права защищены.</p>
       </div>
     </div>
   </footer>
 
-  <!-- AI Modal -->
-  <div id="aiModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">
-          <span class="ai-avatar">🤖</span>
-          <div>
-            <h3>ИИ-консультант</h3>
-            <span class="ai-status">Онлайн</span>
-          </div>
-        </div>
-        <span class="close" onclick="closeModal()">&times;</span>
-      </div>
-      <div id="chatBox" class="chat-box">
-        <div class="ai-message">
-          <span class="message-avatar">🤖</span>
-          <div class="message-content">
-            Здравствуйте! Я ИИ-консультант компании «Дом на юге». Задайте любой вопрос о наших домах, банях или услугах!
-          </div>
-        </div>
-      </div>
-      <div class="chat-input-wrapper">
-        <input type="text" id="userInput" placeholder="Напишите ваш вопрос..." onkeypress="if(event.key==='Enter') sendMessage()"/>
-        <button onclick="sendMessage()" class="send-btn">➤</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Cookie Banner -->
   <div id="cookieBanner" class="cookie-banner">

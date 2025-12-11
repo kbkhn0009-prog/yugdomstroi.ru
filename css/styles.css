@@ -15,12 +15,12 @@
   --bg-card-hover: #f8f9fa;
   --bg-input: #f8f9fa;
   
-  /* Золотистый акцент для кнопок */
-  --accent-primary: #b8860b;
-  --accent-secondary: #d4a853;
-  --accent-light: #f5c518;
-  --accent-gradient: linear-gradient(135deg, #b8860b 0%, #d4a853 50%, #f5c518 100%);
-  --accent-glow: rgba(212, 168, 83, 0.15);
+  /* Цвет #4A2C18 для кнопок */
+  --accent-primary: #4A2C18;
+  --accent-secondary: #6B4228;
+  --accent-light: #8B5A3A;
+  --accent-gradient: linear-gradient(135deg, #3A2110 0%, #4A2C18 50%, #6B4228 100%);
+  --accent-glow: rgba(74, 44, 24, 0.15);
   
   /* Дополнительные цвета */
   --success: #22c55e;
@@ -282,7 +282,7 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 140px 24px 100px;
+  padding: 100px 24px 60px;
   overflow: hidden;
   background: var(--bg-primary);
 }
@@ -348,8 +348,8 @@ a {
   display: flex;
   justify-content: center;
   gap: 64px;
-  margin-top: 80px;
-  padding-top: 48px;
+  margin-top: 48px;
+  padding-top: 32px;
   border-top: 1px solid var(--border-color);
 }
 
@@ -431,7 +431,7 @@ a {
 .hero-top {
   position: relative;
   z-index: 2;
-  padding: 140px 24px 40px;
+  padding: 100px 24px 30px;
   display: flex;
   justify-content: center;
   background: transparent;
@@ -489,19 +489,23 @@ a {
 .hero-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1240px;
   height: 100%;
   min-height: 700px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   margin: 0 auto;
-  padding-top: 0;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .hero-image {
   position: absolute;
-  inset: 0;
+  left: 24px;
+  right: 24px;
+  top: 0;
+  bottom: 0;
   background-image: url('../img/hero-bg-new.jpg');
   background-size: cover;
   background-position: center;
@@ -525,8 +529,8 @@ a {
 .hero-cta-button {
   position: absolute;
   top: -1cm;
-  left: calc(50% - 3cm);
-  transform: translate(-50%, -50%);
+  left: calc(50% - 4.2cm);
+  transform: translateX(-50%);
   z-index: 10;
   display: inline-flex;
   align-items: center;
@@ -550,7 +554,7 @@ a {
 }
 
 .hero-cta-button:hover {
-  transform: translate(-50%, -52%);
+  transform: translateX(-50%) translateY(-2%);
 }
 
 .hero-cta-button svg {
@@ -567,7 +571,7 @@ a {
 .about-section {
   position: relative;
   z-index: 1;
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-primary);
   clear: both;
 }
@@ -668,7 +672,7 @@ a {
    STATS SECTION - График роста запросов
    =============================================== */
 .stats-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-primary);
 }
 
@@ -676,7 +680,7 @@ a {
   text-align: center;
   font-size: 15px;
   color: var(--text-secondary);
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .chart-container {
@@ -853,7 +857,7 @@ a {
    PROJECTS SECTION - Карточки как на yardrey.ru
    =============================================== */
 .projects-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-primary);
 }
 
@@ -861,7 +865,7 @@ a {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   flex-wrap: wrap;
 }
 
@@ -893,7 +897,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .project-card {
@@ -1027,6 +1031,188 @@ a {
   width: 16.666% !important;
 }
 
+/* Для слайдеров бань - показывать только одно фото */
+.saunas-grid .project-image-slider {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.saunas-grid .slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.saunas-grid .slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.saunas-grid .slide {
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  /* Ширина слайда зависит от количества слайдов в треке */
+  width: 16.666% !important; /* По умолчанию для 6 слайдов */
+  padding: 0;
+  margin: 0;
+}
+
+.saunas-grid #slider-single .slide {
+  width: 10% !important; /* Для 10 слайдов */
+}
+
+.saunas-grid #slider-cub .slide {
+  width: 20% !important; /* Для 5 слайдов */
+}
+
+.saunas-grid #slider-modern .slide {
+  width: 25% !important; /* Для 4 слайдов */
+}
+
+.saunas-grid #slider-chan {
+  width: 100% !important; /* 1 слайд */
+}
+
+.saunas-grid #slider-chan .slide {
+  width: 100% !important; /* Для 1 слайда */
+}
+
+/* Стили для слайдеров модульных домов */
+.saunas-grid #slider-studio {
+  width: 200% !important; /* 2 слайда */
+}
+
+.saunas-grid #slider-studio .slide {
+  width: 50% !important; /* Для 2 слайдов */
+}
+
+.saunas-grid #slider-comfort {
+  width: 400% !important; /* 4 слайда */
+}
+
+.saunas-grid #slider-comfort .slide {
+  width: 25% !important; /* Для 4 слайдов */
+}
+
+.saunas-grid #slider-family {
+  width: 300% !important; /* 3 слайда */
+}
+
+.saunas-grid #slider-family .slide {
+  width: 33.333% !important; /* Для 3 слайдов */
+}
+
+.saunas-grid .slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ширина трека для бань - зависит от количества слайдов */
+.saunas-grid #slider-barn,
+.saunas-grid #slider-g-shaped,
+.saunas-grid #slider-z,
+.saunas-grid #slider-scandinavian,
+.saunas-grid #slider-corner {
+  width: 600% !important; /* 6 слайдов × 100% */
+}
+
+.saunas-grid #slider-single {
+  width: 1000% !important; /* 10 слайдов × 100% */
+}
+
+.saunas-grid #slider-cub {
+  width: 500% !important; /* 5 слайдов × 100% */
+}
+
+.saunas-grid #slider-modern {
+  width: 400% !important; /* 4 слайда × 100% */
+}
+
+/* Трансформации для слайдеров бань - показывать только одно фото */
+/* Для 6 слайдов: сдвиг на 100% контейнера для каждого слайда */
+.saunas-grid #slider-barn.active-slide-0,
+.saunas-grid #slider-g-shaped.active-slide-0,
+.saunas-grid #slider-z.active-slide-0,
+.saunas-grid #slider-scandinavian.active-slide-0,
+.saunas-grid #slider-corner.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-barn.active-slide-1,
+.saunas-grid #slider-g-shaped.active-slide-1,
+.saunas-grid #slider-z.active-slide-1,
+.saunas-grid #slider-scandinavian.active-slide-1,
+.saunas-grid #slider-corner.active-slide-1 { transform: translateX(-16.666%); }
+.saunas-grid #slider-barn.active-slide-2,
+.saunas-grid #slider-g-shaped.active-slide-2,
+.saunas-grid #slider-z.active-slide-2,
+.saunas-grid #slider-scandinavian.active-slide-2,
+.saunas-grid #slider-corner.active-slide-2 { transform: translateX(-33.333%); }
+.saunas-grid #slider-barn.active-slide-3,
+.saunas-grid #slider-g-shaped.active-slide-3,
+.saunas-grid #slider-z.active-slide-3,
+.saunas-grid #slider-scandinavian.active-slide-3,
+.saunas-grid #slider-corner.active-slide-3 { transform: translateX(-50%); }
+.saunas-grid #slider-barn.active-slide-4,
+.saunas-grid #slider-g-shaped.active-slide-4,
+.saunas-grid #slider-z.active-slide-4,
+.saunas-grid #slider-scandinavian.active-slide-4,
+.saunas-grid #slider-corner.active-slide-4 { transform: translateX(-66.666%); }
+.saunas-grid #slider-barn.active-slide-5,
+.saunas-grid #slider-g-shaped.active-slide-5,
+.saunas-grid #slider-z.active-slide-5,
+.saunas-grid #slider-scandinavian.active-slide-5,
+.saunas-grid #slider-corner.active-slide-5 { transform: translateX(-83.333%); }
+
+/* Для 10 слайдов */
+.saunas-grid #slider-single.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-single.active-slide-1 { transform: translateX(-10%); }
+.saunas-grid #slider-single.active-slide-2 { transform: translateX(-20%); }
+.saunas-grid #slider-single.active-slide-3 { transform: translateX(-30%); }
+.saunas-grid #slider-single.active-slide-4 { transform: translateX(-40%); }
+.saunas-grid #slider-single.active-slide-5 { transform: translateX(-50%); }
+.saunas-grid #slider-single.active-slide-6 { transform: translateX(-60%); }
+.saunas-grid #slider-single.active-slide-7 { transform: translateX(-70%); }
+.saunas-grid #slider-single.active-slide-8 { transform: translateX(-80%); }
+.saunas-grid #slider-single.active-slide-9 { transform: translateX(-90%); }
+
+/* Для 5 слайдов */
+.saunas-grid #slider-cub.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-cub.active-slide-1 { transform: translateX(-20%); }
+.saunas-grid #slider-cub.active-slide-2 { transform: translateX(-40%); }
+.saunas-grid #slider-cub.active-slide-3 { transform: translateX(-60%); }
+.saunas-grid #slider-cub.active-slide-4 { transform: translateX(-80%); }
+
+/* Для 4 слайдов */
+.saunas-grid #slider-modern.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-modern.active-slide-1 { transform: translateX(-25%); }
+.saunas-grid #slider-modern.active-slide-2 { transform: translateX(-50%); }
+.saunas-grid #slider-modern.active-slide-3 { transform: translateX(-75%); }
+
+/* Трансформации для слайдеров модульных домов */
+.saunas-grid #slider-studio.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-studio.active-slide-1 { transform: translateX(-50%); }
+
+.saunas-grid #slider-comfort.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-comfort.active-slide-1 { transform: translateX(-25%); }
+.saunas-grid #slider-comfort.active-slide-2 { transform: translateX(-50%); }
+.saunas-grid #slider-comfort.active-slide-3 { transform: translateX(-75%); }
+
+.saunas-grid #slider-family.active-slide-0 { transform: translateX(0); }
+.saunas-grid #slider-family.active-slide-1 { transform: translateX(-33.333%); }
+.saunas-grid #slider-family.active-slide-2 { transform: translateX(-66.666%); }
+
 .slide img {
   width: 100%;
   height: 100%;
@@ -1034,6 +1220,17 @@ a {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
+/* Переопределение для карточек бань - приоритет выше */
+.saunas-grid .slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0;
+  padding: 0;
+}
+
 
 .slide img:hover {
   transform: scale(1.02);
@@ -1200,7 +1397,7 @@ a {
    SERVICES SECTION
    =============================================== */
 .services-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-secondary);
 }
 
@@ -1249,7 +1446,7 @@ a {
    BENEFITS SECTION
    =============================================== */
 .benefits-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-primary);
 }
 
@@ -1303,7 +1500,7 @@ a {
    =============================================== */
 .page-hero {
   position: relative;
-  padding: 160px 24px 80px;
+  padding: 100px 24px 50px;
   text-align: center;
   background: var(--bg-secondary);
   overflow: hidden;
@@ -1360,7 +1557,7 @@ a {
    =============================================== */
 .section-title {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   position: relative;
   color: var(--text-primary);
 }
@@ -1377,7 +1574,7 @@ a {
 
 /* Features Section */
 .features {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-secondary);
 }
 
@@ -1422,7 +1619,7 @@ a {
 
 /* Products Section */
 .products {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-primary);
 }
 
@@ -1490,7 +1687,7 @@ a {
    CONTENT SECTION
    =============================================== */
 .content {
-  padding: 80px 0;
+  padding: 50px 0;
   background: var(--bg-primary);
 }
 
@@ -1515,7 +1712,17 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
+}
+
+/* Для карточек бань - 2 колонки и шире */
+.models-grid.saunas-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 32px !important;
+}
+
+.models-grid.saunas-grid .model-card {
+  padding: 40px 32px 32px !important;
 }
 
 .model-card {
@@ -1621,7 +1828,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .included-item {
@@ -1647,7 +1854,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .advantage-card {
@@ -1689,7 +1896,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .gallery-item {
@@ -1738,7 +1945,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .service-card {
@@ -1809,7 +2016,7 @@ a {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 16px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .location-card {
@@ -1857,7 +2064,7 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
@@ -1910,7 +2117,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .contact-info h2,
@@ -2012,7 +2219,7 @@ a {
 
 /* Map Section */
 .map-section {
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .map-container {
@@ -2070,7 +2277,7 @@ a {
 
 /* FAQ Section */
 .faq-section {
-  margin-bottom: 64px;
+  margin-bottom: 40px;
 }
 
 .faq-grid {
@@ -2184,7 +2391,7 @@ a {
    CTA SECTION
    =============================================== */
 .cta {
-  padding: 100px 0;
+  padding: 60px 0;
   background: var(--bg-secondary);
 }
 
@@ -2230,7 +2437,7 @@ footer {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 48px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .footer-brand .logo {
@@ -2579,7 +2786,7 @@ footer {
   }
   
   .hero-top {
-    padding: 120px 24px 30px;
+    padding: 80px 24px 20px;
   }
   
   .hero-new h1 {
@@ -2710,11 +2917,11 @@ footer {
   }
   
   .hero {
-    padding: 120px 16px 60px;
+    padding: 80px 16px 40px;
   }
   
   .page-hero {
-    padding: 120px 16px 60px;
+    padding: 80px 16px 40px;
   }
   
   .features,
@@ -2724,7 +2931,7 @@ footer {
   .projects-section,
   .services-section,
   .benefits-section {
-    padding: 64px 0;
+    padding: 40px 0;
   }
   
   .content {
@@ -2800,6 +3007,14 @@ footer {
   justify-content: center;
 }
 
+.image-modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
 .image-modal-img {
   max-width: 100%;
   max-height: 90vh;
@@ -2818,10 +3033,61 @@ footer {
   cursor: pointer;
   line-height: 1;
   transition: opacity 0.3s ease;
+  z-index: 10001;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
 }
 
 .image-modal-close:hover {
   opacity: 0.7;
+}
+
+.image-modal-prev,
+.image-modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10001;
+}
+
+.image-modal-prev {
+  left: 20px;
+}
+
+.image-modal-next {
+  right: 20px;
+}
+
+.image-modal-prev:hover,
+.image-modal-next:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.image-modal-counter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 @keyframes fadeIn {

@@ -65,37 +65,17 @@ window.addEventListener('scroll', () => {
 });
 
 // ===============================================
-// AI CHAT MODAL
+// MODAL (for "Оставить заявку" buttons)
 // ===============================================
 function openModal() {
-  const modal = document.getElementById('aiModal');
-  if (modal) {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    
-    // Focus on input
-    setTimeout(() => {
-      const input = document.getElementById('userInput');
-      input?.focus();
-    }, 300);
-  }
+  // Open catalog modal instead
+  openCatalogModal();
 }
 
 function closeModal() {
-  const modal = document.getElementById('aiModal');
-  if (modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
+  // Close catalog modal instead
+  closeCatalogModal();
 }
-
-// Close modal on outside click
-window.addEventListener('click', (event) => {
-  const modal = document.getElementById('aiModal');
-  if (event.target === modal) {
-    closeModal();
-  }
-});
 
 // ===============================================
 // CATALOG MODAL
@@ -132,139 +112,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ===============================================
-// AI CHAT FUNCTIONALITY
-// ===============================================
-const aiResponses = {
-  // Приветствия
-  'привет': 'Здравствуйте! Рад вас видеть! Чем могу помочь? Интересуют дома, бани или оформление земли?',
-  'здравствуйте': 'Добрый день! Я ИИ-консультант компании «Дом на юге». Расскажите, что вас интересует?',
-  'добрый день': 'Здравствуйте! Готов ответить на ваши вопросы о каркасных домах и наших услугах.',
-  
-  // Цены
-  'цена': 'Наши цены:\n• А-фрейм: от 1.6 млн ₽ (26 м²)\n• Барнхаус: от 2.5 млн ₽ (60 м²)\n• Бани-бочки: от 350 тыс ₽\n• Купели: от 180 тыс ₽\n\nХотите узнать подробнее о конкретном проекте?',
-  'стоимость': 'Стоимость зависит от модели и комплектации. А-фреймы от 1.6 млн ₽, барнхаусы от 2.5 млн ₽. Могу рассказать подробнее!',
-  'сколько стоит': 'Всё зависит от ваших потребностей! Расскажите, что именно вас интересует — дом, баня или участок?',
-  
-  // А-фрейм
-  'а-фрейм': 'А-фрейм дома — это компактные треугольные дома, идеальные для отдыха или сдачи в аренду.\n\nМодели:\n• Мини (26 м²) — 1.6 млн ₽\n• Стандарт (45 м²) — 2.1 млн ₽\n• Макс (51 м²) — 2.2 млн ₽\n\nСобираются за 5-7 дней!',
-  'треугольный': 'Вы про А-фрейм дома? Это отличный выбор! Треугольная форма обеспечивает устойчивость и создаёт уникальный уютный интерьер. Цены от 1.6 млн ₽.',
-  
-  // Барнхаус
-  'барнхаус': 'Барнхаус — просторные дома в скандинавском стиле для постоянного проживания.\n\nМодели:\n• S (60 м²) — 2.5 млн ₽\n• M (90 м²) — 3.2 млн ₽\n• L (130 м²) — 4.5 млн ₽\n\nБольшие окна, открытые пространства, энергоэффективность.',
-  
-  // Модульные дома
-  'модульн': 'Модульные дома — готовые модули, собираемые на заводе!\n\nМодели:\n• Studio 24 (24 м²) — 1.45 млн ₽\n• Comfort 36 (36 м²) — 1.95 млн ₽\n• Family 54 (54 м²) — 2.75 млн ₽\n\nСборка за 1 день! Полная заводская готовность: электрика, отделка, сантехника.',
-  'модуль': 'Модульные дома — это полностью готовое жильё с завода. Устанавливаются за 1 день! Внутри уже есть электрика, отделка и сантехника. Цены от 1.45 млн ₽.',
-  
-  // Бани
-  'баня': 'У нас есть бани-бочки из сибирского кедра:\n• 2 м (2-3 чел.) — 350 тыс ₽\n• 4 м (4-6 чел.) — 480 тыс ₽\n• 6 м (6-8 чел.) — 650 тыс ₽\n\nДоставка и установка за 1 день!',
-  'сауна': 'Интересуют бани? У нас бани-бочки из натурального кедра от 350 тыс ₽. Готовы к использованию сразу после установки!',
-  
-  // Купели
-  'купель': 'Наши купели:\n• Дровяная (Ø 1.5 м) — 180 тыс ₽\n• С гидромассажем (Ø 1.8 м) — 320 тыс ₽\n• Японская офуро — 250 тыс ₽\n\nВсе из натурального кедра или лиственницы.',
-  
-  // Земля
-  'участок': 'Помогаем с подбором и оформлением земли в Краснодарском крае и Адыгее.\n\nУслуги:\n• Подбор участка — от 15 000 ₽\n• Юридическая проверка — от 10 000 ₽\n• Сопровождение сделки — от 25 000 ₽',
-  'земля': 'Нужен участок? Работаем по всему ЮФО: Горячий Ключ, Геленджик, Анапа, Красная Поляна, Апшеронский район. Поможем найти и оформить!',
-  
-  // Сроки
-  'срок': 'Сроки строительства:\n• Сборка на участке: 5-7 дней\n• Полный цикл от заказа до заселения: 30-45 дней\n• Бани и купели: доставка и установка за 1 день',
-  'сколько времени': 'Дом собирается на участке за 5-7 дней. С учётом производства — готов за 30-45 дней. Бани устанавливаем за 1 день!',
-  
-  // Гарантия
-  'гарантия': 'Даём гарантию:\n• На дома: 5 лет на конструктив, 2 года на отделку\n• На бани и купели: 3 года\n• Бесплатное гарантийное обслуживание',
-  
-  // Контакты
-  'телефон': 'Наш телефон: +7 (989) 232-11-77\nЗвоните ежедневно с 9:00 до 20:00!\n\nТакже можете написать в WhatsApp или Telegram.',
-  'контакт': 'Связаться с нами:\n📞 +7 (989) 232-11-77\n✉️ info@domnayuge.ru\n💬 WhatsApp: wa.me/79892321177\n\nОтветим на все вопросы!',
-  'позвонить': 'Звоните нам: +7 (989) 232-11-77! Работаем ежедневно с 9:00 до 20:00. Или оставьте заявку на сайте — перезвоним в течение часа.',
-  
-  // Локация
-  'где': 'Мы находимся в Краснодарском крае, г. Горячий Ключ. Строим по всему ЮФО: Краснодарский край, Адыгея, Ростовская область. Доставка по всей России!',
-  'регион': 'Основной регион — юг России: Краснодарский край, Адыгея, Ростовская область. Но доставим дом в любую точку страны!',
-  
-  // Материалы
-  'материал': 'Используем качественные материалы:\n• Каркас: клеёный брус, LVL-брус\n• Утепление: 200-250 мм\n• Древесина: сибирский кедр, алтайская лиственница\n• Окна: двухкамерные ПВХ или панорамные',
-  'из чего': 'Наши дома из клеёного бруса с утеплением 200-250 мм. Бани и купели — из сибирского кедра и лиственницы. Всё экологично и долговечно!',
-  
-  // Default
-  'default': 'Спасибо за вопрос! Для подробной консультации рекомендую:\n\n📞 Позвонить: +7 (989) 232-11-77\n✉️ Написать: info@domnayuge.ru\n\nИли оставьте заявку на сайте — мы перезвоним!'
-};
-
-function getAIResponse(message) {
-  const lowerMessage = message.toLowerCase();
-  
-  // Check for keywords in the message
-  for (const [keyword, response] of Object.entries(aiResponses)) {
-    if (keyword !== 'default' && lowerMessage.includes(keyword)) {
-      return response;
-    }
-  }
-  
-  return aiResponses['default'];
-}
-
-function sendMessage() {
-  const input = document.getElementById('userInput');
-  const chat = document.getElementById('chatBox');
-  const message = input.value.trim();
-  
-  if (!message) return;
-  
-  // Add user message
-  const userMsgDiv = document.createElement('div');
-  userMsgDiv.className = 'user-message';
-  userMsgDiv.innerHTML = `
-    <span class="message-avatar">👤</span>
-    <div class="message-content">${escapeHtml(message)}</div>
-  `;
-  chat.appendChild(userMsgDiv);
-  
-  // Clear input
-  input.value = '';
-  
-  // Scroll to bottom
-  chat.scrollTop = chat.scrollHeight;
-  
-  // Show typing indicator
-  const typingDiv = document.createElement('div');
-  typingDiv.className = 'ai-message typing';
-  typingDiv.innerHTML = `
-    <span class="message-avatar">🤖</span>
-    <div class="message-content">Печатаю...</div>
-  `;
-  chat.appendChild(typingDiv);
-  chat.scrollTop = chat.scrollHeight;
-  
-  // Simulate AI response with delay
-  setTimeout(() => {
-    // Remove typing indicator
-    typingDiv.remove();
-    
-    // Get AI response
-    const response = getAIResponse(message);
-    
-    // Add AI message
-    const aiMsgDiv = document.createElement('div');
-    aiMsgDiv.className = 'ai-message';
-    aiMsgDiv.innerHTML = `
-      <span class="message-avatar">🤖</span>
-      <div class="message-content">${response.replace(/\n/g, '<br>')}</div>
-    `;
-    chat.appendChild(aiMsgDiv);
-    
-    // Scroll to bottom
-    chat.scrollTop = chat.scrollHeight;
-  }, 1000 + Math.random() * 1000);
-}
-
-// Escape HTML to prevent XSS
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
 
 // ===============================================
 // FORM HANDLING
@@ -463,7 +310,15 @@ let currentSlide = {
   modular: 0,
   studio: 0,
   comfort: 0,
-  family: 0
+  family: 0,
+  barn: 0,
+  'g-shaped': 0,
+  z: 0,
+  single: 0,
+  cub: 0,
+  modern: 0,
+  scandinavian: 0,
+  corner: 0
 };
 let slideIntervals = {};
 
@@ -506,15 +361,28 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.project-image-slider').forEach(sliderWrapper => {
     const sliderTrack = sliderWrapper.querySelector('.slider-track');
     if (!sliderTrack) return;
-    
+
     const sliderId = sliderTrack.id.replace('slider-', '');
-    
+
+    // Инициализация currentSlide если его нет
+    if (currentSlide[sliderId] === undefined) {
+      currentSlide[sliderId] = 0;
+    }
+
+    // Убеждаемся, что слайдер показывает первое фото
+    sliderTrack.className = 'slider-track active-slide-0';
+
     sliderWrapper.addEventListener('mouseenter', () => {
       if (slideIntervals[sliderId]) clearInterval(slideIntervals[sliderId]);
       const slides = sliderTrack.querySelectorAll('.slide');
-      slideIntervals[sliderId] = setInterval(() => {
-        changeSlide(sliderId, 1);
-      }, 2000);
+      if (slides.length > 1) { // Only auto-play if there's more than one slide
+        // Для карточек бань - более медленная прокрутка (4 секунды)
+        const isSaunaCard = sliderWrapper.closest('.saunas-grid') !== null;
+        const interval = isSaunaCard ? 4000 : 2000;
+        slideIntervals[sliderId] = setInterval(() => {
+          changeSlide(sliderId, 1);
+        }, interval);
+      }
     });
 
     sliderWrapper.addEventListener('mouseleave', () => {
@@ -532,33 +400,144 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===============================================
 // IMAGE MODAL FUNCTIONALITY
 // ===============================================
-function openImageModal(imageSrc) {
-  // Create modal if it doesn't exist
+// Глобальные переменные для модального окна
+let modalImageIndex = 0;
+let modalImages = [];
+let modalKeyboardHandler = null;
+
+function openImageModal(imageSrc, clickedElement) {
+  // Находим кликнутое изображение
+  let clickedImg = clickedElement;
+  
+  // Если clickedElement не передан, пытаемся найти через event
+  if (!clickedImg) {
+    clickedImg = window.event?.target || (typeof event !== 'undefined' ? event.target : null);
+  }
+  
+  // Если нашли изображение, используем его
+  if (clickedImg && clickedImg.tagName === 'IMG') {
+    const slider = clickedImg.closest('.slider-track');
+    if (slider) {
+      openImageModalWithSlider(clickedImg.src, slider.id || null);
+      return;
+    }
+  }
+  
+  // Если event не доступен, ищем изображение по src
+  const img = document.querySelector(`img[src*="${imageSrc.split('/').pop()}"]`);
+  if (img) {
+    const slider = img.closest('.slider-track');
+    openImageModalWithSlider(img.src, slider?.id || null);
+    return;
+  }
+  
+  // Если ничего не найдено, открываем просто изображение
+  openImageModalWithSlider(imageSrc, null);
+}
+
+function openImageModalWithSlider(imageSrc, sliderId) {
+  // Собираем все изображения из слайдера
+  if (sliderId) {
+    const slider = document.getElementById(sliderId);
+    if (slider) {
+      const slides = slider.querySelectorAll('.slide img');
+      modalImages = Array.from(slides).map(img => img.src);
+      const imageName = imageSrc.split('/').pop();
+      modalImageIndex = modalImages.findIndex(src => src.includes(imageName));
+      if (modalImageIndex === -1) modalImageIndex = 0;
+    } else {
+      modalImages = [imageSrc];
+      modalImageIndex = 0;
+    }
+  } else {
+    // Ищем слайдер в родительском элементе
+    const clickedImg = event?.target || document.querySelector(`img[src*="${imageSrc.split('/').pop()}"]`);
+    if (clickedImg) {
+      const slider = clickedImg.closest('.slider-track');
+      if (slider) {
+        const slides = slider.querySelectorAll('.slide img');
+        modalImages = Array.from(slides).map(img => img.src);
+        modalImageIndex = modalImages.findIndex(src => src === clickedImg.src);
+        if (modalImageIndex === -1) modalImageIndex = 0;
+      } else {
+        modalImages = [imageSrc];
+        modalImageIndex = 0;
+      }
+    } else {
+      modalImages = [imageSrc];
+      modalImageIndex = 0;
+    }
+  }
+
+  // Создаем или обновляем модальное окно
   let modal = document.getElementById('imageModal');
   if (!modal) {
     modal = document.createElement('div');
     modal.id = 'imageModal';
     modal.className = 'image-modal';
-    modal.innerHTML = `
-      <div class="image-modal-content">
-        <span class="image-modal-close">&times;</span>
-        <img src="" alt="Увеличенное изображение" class="image-modal-img">
-      </div>
-    `;
     document.body.appendChild(modal);
     
-    // Close on click outside or close button
+    // Close on click outside
     modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.classList.contains('image-modal-close')) {
+      if (e.target === modal) {
         closeImageModal();
       }
     });
   }
   
-  const img = modal.querySelector('.image-modal-img');
-  img.src = imageSrc;
+  modal.innerHTML = `
+    <div class="image-modal-content" onclick="event.stopPropagation()">
+      <button class="image-modal-close" onclick="closeImageModal()">×</button>
+      ${modalImages.length > 1 ? `<button class="image-modal-prev" onclick="changeModalImage(-1)">‹</button>` : ''}
+      <img id="modalImage" src="${modalImages[modalImageIndex]}" alt="Увеличенное изображение">
+      ${modalImages.length > 1 ? `<button class="image-modal-next" onclick="changeModalImage(1)">›</button>` : ''}
+      ${modalImages.length > 1 ? `<div class="image-modal-counter">${modalImageIndex + 1} / ${modalImages.length}</div>` : ''}
+    </div>
+  `;
+  
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  
+  // Добавляем обработчик клавиатуры
+  if (modalKeyboardHandler) {
+    document.removeEventListener('keydown', modalKeyboardHandler);
+  }
+  modalKeyboardHandler = handleModalKeyboard;
+  document.addEventListener('keydown', modalKeyboardHandler);
+}
+
+function changeModalImage(direction) {
+  modalImageIndex += direction;
+  
+  if (modalImageIndex < 0) {
+    modalImageIndex = modalImages.length - 1;
+  } else if (modalImageIndex >= modalImages.length) {
+    modalImageIndex = 0;
+  }
+  
+  const modalImage = document.getElementById('modalImage');
+  const counter = document.querySelector('.image-modal-counter');
+  
+  if (modalImage) {
+    modalImage.src = modalImages[modalImageIndex];
+  }
+  
+  if (counter) {
+    counter.textContent = `${modalImageIndex + 1} / ${modalImages.length}`;
+  }
+}
+
+function handleModalKeyboard(e) {
+  const modal = document.getElementById('imageModal');
+  if (modal && modal.style.display === 'flex') {
+    if (e.key === 'ArrowLeft') {
+      changeModalImage(-1);
+    } else if (e.key === 'ArrowRight') {
+      changeModalImage(1);
+    } else if (e.key === 'Escape') {
+      closeImageModal();
+    }
+  }
 }
 
 function closeImageModal() {
@@ -566,15 +545,14 @@ function closeImageModal() {
   if (modal) {
     modal.style.display = 'none';
     document.body.style.overflow = '';
+    modalImages = [];
+    modalImageIndex = 0;
+    if (modalKeyboardHandler) {
+      document.removeEventListener('keydown', modalKeyboardHandler);
+      modalKeyboardHandler = null;
+    }
   }
 }
-
-// Close modal on Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeImageModal();
-  }
-});
 
 // ===============================================
 // LOAD PRODUCTS FROM JSON (отключено - используем статические карточки)
