@@ -15,3 +15,10 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Scripts with tokens
+*.bat
+UPLOAD-TO-GITHUB.bat
+git-push-with-token.bat
+git-push.bat
+deploy-to-github.bat
